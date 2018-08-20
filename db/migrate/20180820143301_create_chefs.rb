@@ -6,7 +6,6 @@ class CreateChefs < ActiveRecord::Migration[5.2]
       t.integer :experience
       t.string :location
       t.string :photo_id
-      t.string :email
       t.boolean :availability
       t.string :phone
 
