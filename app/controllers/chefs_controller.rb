@@ -32,6 +32,8 @@ class ChefsController < ApplicationController
 
   def destroy
     # set_chef
+    @chef.destroy
+    redirect_to chef_path
   end
 
   private
