@@ -1,5 +1,5 @@
 class ChefsController < ApplicationController
-  before_action :set_chef, only: [:show, :edit, :update, :destroy, :toggle_availability]
+  # before_action :set_chef, only: [:show, :edit, :update, :destroy, :toggle_availability]
 
   def index
     @chefs = Chef.all
@@ -38,9 +38,9 @@ class ChefsController < ApplicationController
 
   private
 
-  def set_chef
-    @chef = Chef.find(params[:id])
-  end
+  # def set_chef
+  #   @chef = Chef.find(params[:id])
+  # end
 
   def chef_params
     params.require(:chef).permit(:first_name, :last_name, :experience, :location,
