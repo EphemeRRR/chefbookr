@@ -9,6 +9,14 @@
   align-items: center;
   justify-content: center;
 }
+
+.banner-content {
+  display: flex;
+  flex: 0 0 50%;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
 .banner h1 {
   font-size: 50px;
   font-weight: bold;
