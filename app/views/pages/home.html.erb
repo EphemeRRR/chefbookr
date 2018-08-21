@@ -6,7 +6,7 @@
     <!-- <a class="btn btn-primary btn-lg">Start now</a> -->
     <form class="form-inline">
       <input class="form-control form-style" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-primary my-2 my-sm-0 search-btn" type="submit">Search</button>
+    <button class="btn btn-primary search-btn" type="submit">Search</button>
     </form>
   </div>
 </div>
@@ -25,49 +25,55 @@
         <h3>AMUSE-BOUCHE</h3>
         <p> Amuse-bouche au gré du marché de saison</p>
 
-        <h3>ENTRÉE (AU CHOIX)</h3>
+        <div class=" block choice-section">
+          <p class="section">ENTRÉE (AU CHOIX)</p>
 
-        <p>Tataki de bœuf au combava, vinaigrette figue-sésame, tuile parmesan-épices
-        ou
+          <div class="dishes">Tataki de bœuf au combava, vinaigrette figue-sésame, tuile parmesan-épices
+          ou
 
-        Crudités Melba de saison : Légumes et fruits du marché émincés, crème fouettée, velours de grenade
-        ou
+          Crudités Melba de saison : Légumes et fruits du marché émincés, crème fouettée, velours de grenade
+          ou
 
-        Salade tiède de lentilles du Puy, à la cardamome verte, tomates confites, dés de haddock</p>
-        <h3>PLAT (AU CHOIX)</h3>
+          Salade tiède de lentilles du Puy, à la cardamome verte, tomates confites, dés de haddock</div>
+        </div>
+        <div class="choice-section">
+          <h3>PLAT (AU CHOIX)</h3>
 
-        <P>
-          Gigot d'agneau de 7h au miel, à la menthe et aux épices cuit en basse température
-        ou
+          <P>
+            Gigot d'agneau de 7h au miel, à la menthe et aux épices cuit en basse température
+          ou
 
-        Lapin à la vanille et aux figues ou aux abricots cuits en basse température
-        ou
+          Lapin à la vanille et aux figues ou aux abricots cuits en basse température
+          ou
 
-        Sauté de veau aux agrumes, légumes fondants
-        ou
+          Sauté de veau aux agrumes, légumes fondants
+          ou
 
-        Rôti de boeuf à la moutarde douce et aux épices
-        ACCOMPAGNEMENT AU CHOIX (AU CHOIX)
+          Rôti de boeuf à la moutarde douce et aux épices
+          ACCOMPAGNEMENT AU CHOIX (AU CHOIX)
 
-        Poêlée de légumes du marché aux épices douces
-        ou
+          Poêlée de légumes du marché aux épices douces
+          ou
 
-        Riz au sésame torréfié ou riz à la noix de coco grillée
-        ou
+          Riz au sésame torréfié ou riz à la noix de coco grillée
+          ou
 
-        Dhal de lentilles corail au citron vert, citronnelle et lait de coco</p>
-        <h3>DESSERT (AU CHOIX)</h3>
+          Dhal de lentilles corail au citron vert, citronnelle et lait de coco</p>
+        </div>
+        <div class="choice-section">
+          <h3>DESSERT (AU CHOIX)</h3>
 
-       <p>Tartelette aux fruits de saison
-        ou
+                 <p>Tartelette aux fruits de saison
+          ou
 
-        Galette des Reines à l'orange
-        ou
+          Galette des Reines à l'orange
+          ou
 
-        Charlotte aux fruits de saison ou chocolat-fruits de saison
-        ou
+          Charlotte aux fruits de saison ou chocolat-fruits de saison
+          ou
 
-        Mini Mont-Blanc à ma façon</p>
+          Mini Mont-Blanc à ma façon</p>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -78,90 +84,63 @@
 </div>
 
 
-  <div class="wrapper-card">
+<div class="wrapper-card">
   <h2 class="text-center">Our Chefs</h2>
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-lg-4">
-        <%= link_to "", :id => 'exampleModalLong', "data-toggle" => "modal", 'data-target' => '#exampleModalLong' do %>
-          <div class="cocktail-card">
-           <div class="card-background">
-              <p class="card-heading">Best chef in France</p>
-           </div>
-            <div class="card-bottom">
-              <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/cricri87">
-              <p class="chef-rating">*** <i class="fas fa-thumbs-up"></i></p>
-            </div>
-          </div>
+        <div class="cocktail-card">
+          <%= link_to "", :id => 'exampleModalLong', "data-toggle" => "modal", 'data-target' => '#exampleModalLong' do %>
+         <div class="card-background">
+            <p class="card-heading">Christian Rognstad</p>
+            <p class="label-specialty">
+            <span class="label label-default">French</span>
+            <span class="label label-danger">Meat</span>
+            <span class="label label-primary">Seafood</span> </p>
+         </div>
          <% end %>
+          <div class="card-bottom">
+            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/cricri87">
+            <p class="chef-rating">*** <i class="fas fa-thumbs-up"></i></p>
+          </div>
+        </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-lg-4">
-        <%= link_to "", :id => 'exampleModalLong', "data-toggle" => "modal", 'data-target' => '#exampleModalLong' do %>
-          <div class="cocktail-card">
-           <div class="card-background">
-              <p class="card-heading">Best chef in France</p>
-           </div>
-            <div class="card-bottom">
-              <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/cricri87">
-              <p class="chef-rating">*** <i class="fas fa-thumbs-up"></i></p>
-            </div>
-          </div>
+        <div class="cocktail-card">
+          <%= link_to "", :id => 'exampleModalLong', "data-toggle" => "modal", 'data-target' => '#exampleModalLong' do %>
+         <div class="card-background">
+            <p class="card-heading">Christian Rognstad</p>
+            <p class="label-specialty">
+            <span class="label label-default">French</span>
+            <span class="label label-danger">Meat</span>
+            <span class="label label-primary">Seafood</span> </p>
+         </div>
          <% end %>
+          <div class="card-bottom">
+            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/cricri87">
+            <p class="chef-rating">*** <i class="fas fa-thumbs-up"></i></p>
+          </div>
+        </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-lg-4">
-        <%= link_to "", :id => 'exampleModalLong', "data-toggle" => "modal", 'data-target' => '#exampleModalLong' do %>
-          <div class="cocktail-card">
-           <div class="card-background">
-              <p class="card-heading">Best chef in France</p>
-           </div>
-            <div class="card-bottom">
-              <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/cricri87">
-              <p class="chef-rating">*** <i class="fas fa-thumbs-up"></i></p>
-            </div>
-          </div>
+        <div class="cocktail-card">
+          <%= link_to "", :id => 'exampleModalLong', "data-toggle" => "modal", 'data-target' => '#exampleModalLong' do %>
+         <div class="card-background">
+            <p class="card-heading">Christian Rognstad</p>
+            <p class="label-specialty">
+            <span class="label label-default">French</span>
+            <span class="label label-success">Traditionel</span>
+            <span class="label label-primary">Seafood</span> </p>
+         </div>
          <% end %>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-lg-4">
-        <%= link_to "", :id => 'exampleModalLong', "data-toggle" => "modal", 'data-target' => '#exampleModalLong' do %>
-          <div class="cocktail-card">
-           <div class="card-background">
-              <p class="card-heading">Best chef in France</p>
-           </div>
-            <div class="card-bottom">
-              <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/cricri87">
-              <p class="chef-rating">*** <i class="fas fa-thumbs-up"></i></p>
-            </div>
+          <div class="card-bottom">
+            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/cricri87">
+            <p class="chef-rating">*** <i class="fas fa-thumbs-up"></i></p>
           </div>
-         <% end %>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-lg-4">
-        <%= link_to "", :id => 'exampleModalLong', "data-toggle" => "modal", 'data-target' => '#exampleModalLong' do %>
-          <div class="cocktail-card">
-           <div class="card-background">
-              <p class="card-heading">Best chef in France</p>
-           </div>
-            <div class="card-bottom">
-              <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/cricri87">
-              <p class="chef-rating">*** <i class="fas fa-thumbs-up"></i></p>
-            </div>
-          </div>
-         <% end %>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-lg-4">
-        <%= link_to "", :id => 'exampleModalLong', "data-toggle" => "modal", 'data-target' => '#exampleModalLong' do %>
-          <div class="cocktail-card">
-           <div class="card-background">
-              <p class="card-heading">Best chef in France</p>
-           </div>
-            <div class="card-bottom">
-              <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/cricri87">
-              <p class="chef-rating">*** <i class="fas fa-thumbs-up"></i></p>
-            </div>
-          </div>
-         <% end %>
+        </div>
       </div>
     </div>
   </div>
-  </div>
+</div>
 
 

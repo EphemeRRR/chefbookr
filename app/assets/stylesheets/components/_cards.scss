@@ -3,6 +3,7 @@
   height: auto;
   background-color: lightgray;
   padding-top: 20px;
+  color: #fff;
 }
 
 .card-background {
@@ -11,6 +12,7 @@
   background-position: center;
   background-size: cover;
   height: 210px;
+  position: relative;
 }
 
 
@@ -23,6 +25,7 @@
   background-position: center;
   background-size: cover;
   position: relative;
+
 }
 
 .card-user {
@@ -38,10 +41,17 @@
 .card-heading {
   position: absolute;
   left: 10px;
-  bottom: 50px;
+  top: 10px;
   width: auto;
-  border-radius: 50%;
   color: #fff;
+}
+
+.label-specialty {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  width: auto;
+
 }
 
 .card-bottom {
