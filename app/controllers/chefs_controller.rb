@@ -33,7 +33,7 @@ class ChefsController < ApplicationController
   def destroy
     # set_chef
     @chef.destroy
-    redirect_to chef_path
+    redirect_to chefs_path
   end
 
   private
