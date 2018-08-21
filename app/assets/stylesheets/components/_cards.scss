@@ -5,13 +5,20 @@
   padding-top: 20px;
 }
 
+.card-background {
+  background-image: linear-gradient(-225deg, rgba(0,101,168,0.1) 0%, rgba(0,36,61,0.2) 50%), asset-url('food4.jpeg');
+  background-color: #fff;
+  background-position: center;
+  background-size: cover;
+  height: 210px;
+}
+
 
 .cocktail-card {
   margin: 15px 0px;
   text-align: center;
   height: 250px;
-  color: #fff;
-  background-image: asset-url('banner3.jpeg');
+  color: gray;
   background-color: #fff;
   background-position: center;
   background-size: cover;
@@ -19,11 +26,34 @@
 }
 
 .card-user {
-  position: absolute;
-  // right: 10px;
-  top: 10px;
   width: 40px;
   border-radius: 50%;
+}
+
+.chef-rating {
+  width: auto;
+  border-radius: 50%;
+}
+
+.card-heading {
+  position: absolute;
+  left: 10px;
+  bottom: 50px;
+  width: auto;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  bottom: 0;
+  padding: 0 10px;
+  background-color: #fff;
 }
 
 
