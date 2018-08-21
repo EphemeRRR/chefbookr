@@ -3,71 +3,67 @@
   height: auto;
   background-color: lightgray;
   padding-top: 20px;
+  color: #fff;
 }
 
-
-.cocktail-card {
-  margin: 20px 0;
-  text-align: center;
-  width: 250px;
-  height: 250px;
-  color: #fff;
-  // margin-left: 100px;
-  // margin-right: 100px;
-  // background-image: asset-url('banner3.jpeg')
+.card-background {
+  background-image: linear-gradient(-225deg, rgba(0,101,168,0.1) 0%, rgba(0,36,61,0.2) 50%), asset-url('food4.jpeg');
   background-color: #fff;
   background-position: center;
   background-size: cover;
+  height: 210px;
   position: relative;
 }
 
 
-// .card {
-//   height: 175px;
-//   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-//   background-size: cover !important;
-//   background-position: center;
-//   color: white;
-//   position: relative;
-// }
+.cocktail-card {
+  margin: 15px 0px;
+  text-align: center;
+  height: 250px;
+  color: gray;
+  background-color: #fff;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+
+}
+
 .card-user {
-  position: absolute;
-  // right: 10px;
-  top: 10px;
   width: 40px;
   border-radius: 50%;
 }
-// .card-category {
-//   position: absolute;
-//   top: 10px;
-//   left: 10px;
-//   font-size: 15px;
-//   text-transform: uppercase;
-// }
-// .card-description {
-//   position: absolute;
-//   bottom: 10px;
-//   left: 10px;
-// }
-// .card-description h2 {
-//   font-size: 24px;
-// }
-// .card-description p {
-//   font-size: 14px;
-//   opacity: 0.7;
-//   font-weight: lighter;
-// }
-// .card-link {
-//   position: absolute;
-//   top: 0;
-//   bottom: 0;
-//   right: 0;
-//   width: 100%;
-//   z-index: 2;
-//   background: black;
-//   opacity: 0;
-// }
-// .card-link:hover {
-//   opacity: 0.1;
-// }
+
+.chef-rating {
+  width: auto;
+  border-radius: 50%;
+}
+
+.card-heading {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: auto;
+  color: #fff;
+}
+
+.label-specialty {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  width: auto;
+
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  bottom: 0;
+  padding: 0 10px;
+  background-color: #fff;
+}
+
 
