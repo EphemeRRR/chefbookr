@@ -5,19 +5,20 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <%= link_to "Login user", new_user_session_path, class: "btn btn-default navbar-wagon-item" %>
-    <%= link_to "Login chef", new_chef_session_path, class: "btn btn-default navbar-wagon-item" %>
-    <%= link_to "Signup", new_user_registration_path, class: "btn btn-default navbar-wagon-item" %>
-
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <img src="https://kitt.lewagon.com/placeholder/users/cricri87" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-        <!-- <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Log Out</a></li>
-        </ul> -->
+        <% if @current_user %>
+          <img src="https://kitt.lewagon.com/placeholder/users/cricri87" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li><%= link_to "Logout", destroy_user_session_path %></li>
+          </ul>
+        <% else %>
+          <%= link_to "Login user", new_user_session_path, class: "navbar-wagon-link" %>
+          <%= link_to "Login chef", new_chef_session_path, class: "navbar-wagon-link" %>
+        <% end %>
       </div>
     </div>
   </div>
