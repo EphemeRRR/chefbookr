@@ -10,9 +10,28 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
+    <%= f.input :first_name,
+                required: true,
+                autofocus: true ,
+                input_html: { autocomplete: "given-name" }%>
+    <%= f.input :last_name,
+                required: true,
+                input_html: { autocomplete: "family-name" }%>
+    <%= f.input :experience,
+                required: true,
+                input_html: { autocomplete: "" }%>
+    <%= f.input :location,
+                required: true,
+                input_html: { autocomplete: "shipping locality" }%>
+    <%= f.input :phone,
+                required: true,
+                input_html: { autocomplete: "tel" }%>
+    <%= f.input :photo_id %>
+    <%= f.input :photo_id_cache, as: :hidden %>
+
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
-                required: false
+                required: false,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
                 required: false,
