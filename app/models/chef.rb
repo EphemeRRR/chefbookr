@@ -7,4 +7,6 @@ class Chef < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  mount_uploader :photo_id, PhotoUploader
+
 end
