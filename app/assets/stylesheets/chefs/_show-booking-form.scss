@@ -1,0 +1,19 @@
+.chef-booking-form {
+  margin-top: 256px;
+  height: 300px;
+  position: sticky;
+  top: 0;
+  margin-left: 20px;
+}
+.btn-book {
+  width: 200px;
+}
+.form-booking {
+  margin-top: 50px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+.form-booking > div {
+  padding: 5px 0;
+}
