@@ -16,6 +16,7 @@
             <li><%= link_to "Logout", destroy_chef_session_path, method: :delete %></li>
           </ul>
         <% else %>
+          <%= link_to "All chef", chefs_path, class: "navbar-wagon-link" %>
           <%= link_to "Login user", new_user_session_path, class: "navbar-wagon-link" %>
           <%= link_to "Login chef", new_chef_session_path, class: "navbar-wagon-link" %>
         <% end %>
