@@ -1,14 +1,117 @@
-<div class="chef-main">
-  <div class="chef-info">
-    <img src="" alt="">
-    <div class="chef-show-specialties"></div>
-    <div class="chef-bio"></div>
-    <div class="chef-menus">
-      <div class="chef-menu-tab"></div>
+<div class="container">
+  <div class="chef-main">
+    <div class="chef-info">
+      <div class="chef-image">
+        <%= cl_image_tag @chef.photo_id.url(:thumnail), class: 'img-round' %>
+      </div>
+      <div class="chef-name">
+        <h1><%= @chef.first_name %> <%= @chef.last_name %></h1>
+      </div>
+      <div class="chef-show-specialties">
+      <h4><span class="label label-primary">French Cuisine</span></h4>
+      </div>
+      <div class="chef-bio">
+        <h4>Bio</h4>
+        <p><%= @chef.bio %></p>
+      </div>
+      <div class="chef-menus">
+        <ul class="nav nav-tabs">
+          <li role="presentation" id="tab-1" class="chef-menu-tab active">Simple</li>
+          <li role="presentation" id="tab-2" class="chef-menu-tab ">Classic</li>
+          <li role="presentation" id="tab-3" class="chef-menu-tab ">Grand Luxe</li>
+        </ul>
+        <div id="tab-body-1" class="chef-menu-tab-body show">
+          <div class="chef-menu-body">
+          <h3>3 Courses</h3>
+          <h4>45 &euro; / person</h4>
+            Breakfast, Big Breakfast, Breakfast Wrap, Chicken McMuffin With Egg,<br>
+            Beef, BBQ Double Burger, Big Mac Big Tasty <br>
+            Chicken, 10pc Chicken McNuggets™ 4pc Chicken McNuggets
+          </div>
+        </div>
+        <div id="tab-body-2" class="chef-menu-tab-body hidden">
+          <div class="chef-menu-body">
+          <h3>5 Courses</h3>
+          <h4>120 &euro; / person</h4>
+            Fish, Fillet-O-Fish <br>
+            Wraps, Grilled Chicken Foldover <br>
+            Vegetarian, Veggie Burger <br>
+            Salads, Crispy Chicken Salad Green Salad <br>
+            Sides, Corn Cup, McFries
+          </div>
+        </div>
+        <div id="tab-body-3" class="chef-menu-tab-body hidden">
+          <div class="chef-menu-body">
+          <h3>7 Courses</h3>
+          <h4>230 &euro; / person</h4>
+            Breakfast, Big Breakfast <br>
+            Breakfast Wrap, Chicken McMuffin With Egg,<br>
+            Beef, BBQ Double Burger, Big Mac Big Tasty <br>
+            Fish, Fillet-O-Fish <br>
+            Wraps, Grilled Chicken Foldover <br>
+            Vegetarian, Veggie Burger <br>
+            Salads, Crispy Chicken Salad Green Salad
+          </div>
+        </div>
+      </div>
+      <div class="chef-reviews">
+        <div class="chef-reviews-header">
+          <h3>Reviews</h3><div class="h4 chef-reviews-rating">Something</div>
+        </div>
+        <ul class="inbox">
+        <li class="message">
+          <!-- Code your message here -->
+          <img src="images/cecile.png" alt="cecile picture" class="avatar-circle message-img">
+          <div class="message-profile">
+            <h3>Cecile Falafel</h3>
+            <p>02/08/2018</p>
+          </div>
+          <div class="message-content">
+            <h3>I am not sure yet!</h3>
+            <p>I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?</p>
+          </div>
+          <div class="message-status">
+            <h3 class="status-accepted">Accepted</h3>
+            <p>$352</p>
+          </div>
+        </li>
+        <li class="message">
+          <!-- Code your message here -->
+          <img src="images/gab.png" alt="gab picture" class="avatar-circle message-img">
+          <div class="message-profile">
+            <h3>Gab Guy</h3>
+            <p>01/08/2018</p>
+          </div>
+          <div class="message-content">
+            <h3>I’ll be glad to welcome you in my cosy flat</h3>
+            <p>I’ll be glad to welcome you in my cosy flat in Lille. When are you arriving exactly?</p>
+          </div>
+          <div class="message-status">
+            <h3 class="status-accepted">Accepted</h3>
+            <p>$152</p>
+          </div>
+        </li>
+        <li class="message">
+          <!-- Code your message here -->
+          <img src="images/jad.png" alt="jad picture" class="avatar-circle message-img">
+          <div class="message-profile">
+            <h3>Jab Grenouille</h3>
+            <p>02/08/2018</p>
+          </div>
+          <div class="message-content">
+            <h3>Hey man! I'm sorry...</h3>
+            <p>Hey man! I'm sorry... I'll be in Amsterdam at these dates.</p>
+          </div>
+          <div class="message-status">
+            <h3 class="status-denied">Denied</h3>
+            <p>$242</p>
+          </div>
+        </li>
+      </ul>
+      </div>
     </div>
-    <div class="chef-reviews"></div>
-  </div>
-  <div class="chef-booking-form">
+    <div class="chef-booking-form">
 
+    </div>
   </div>
 </div>

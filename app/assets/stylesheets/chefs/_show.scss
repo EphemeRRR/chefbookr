@@ -1,20 +1,49 @@
 .chef-main {
   display: grid;
+  grid-template-columns: auto 370px;
 }
 .chef-info {
-
+  height: 200vh;
+}
+.chef-name {
+  padding: 10px 0;
 }
 .chef-show-specialties {
 
 }
+.chef-image {
+  display: flex;
+  justify-content: center;
+}
 .chef-bio {
-
+  padding: 10px 0;
 }
 .chef-menus {
 
 }
-.chef-booking-form {
+.chef-menu-tab {
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+}
+.chef-menu-tab.active, .chef-menu-tab:hover {
+  background-color: $blue;
+  color: #FFF;
+}
+.chef-menu-tab-body {
 
+}
+.chef-menu-body {
+  line-height: 32px;
+  padding-left: 10px;
+  height:350px;
+  overflow: scroll;
+}
+.chef-booking-form {
+  margin-top: 150px;
+  height: 400px;
+  position: sticky;
+  top: 0;
 }
 div {
   border: 1px solid gray
