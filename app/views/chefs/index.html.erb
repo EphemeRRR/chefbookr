@@ -1,3 +1,51 @@
-<div class="container">
-  <h1>All our chef's</h1>
+<%= render 'partials/modal'  %>
+<div class="wrapper-menu ">
+  <div class="btn-group">
+    <button type="button" class="fas fa-bars dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+    </button>
+    <ul class="dropdown-menu menu-customize">
+      <li><a href="#">Action</a></li>
+      <li><a href="#">Another action</a></li>
+      <li><a href="#">Something else here</a></li>
+      <li role="separator" class="divider"></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="#">Action</a></li>
+      <li><a href="#">Another action</a></li>
+      <li><a href="#">Something else here</a></li>
+      <li><a href="#">Separated link</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="#">Action</a></li>
+      <li><a href="#">Another action</a></li>
+      <li><a href="#">Something else here</a></li>
+      <li><a href="#">Separated link</a></li>
+    </ul>
+  </div>
+</div>
+
+<h1 class="text-center">All our chef's</h1>
+<div class="wrapper-card">
+  <div class="container">
+    <div class="row">
+      <% @chefs.each do |chef| %>
+        <div class="col-xs-12 col-sm-6 col-lg-4">
+            <div class="cocktail-card">
+              <%= link_to "", :id => 'exampleModalLong', "data-toggle" => "modal", 'data-target' => '#exampleModalLong' do %>
+             <div class="card-background">
+                <p class="card-heading">Christian Rognstad</p>
+                <p class="label-specialty">
+                <span class="label label-default">French</span>
+                <span class="label label-danger">Meat</span>
+                <span class="label label-primary">Seafood</span> </p>
+             </div>
+             <% end %>
+              <div class="card-bottom">
+                <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/cricri87">
+                <p class="chef-rating">*** <i class="fas fa-thumbs-up"></i></p>
+              </div>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
 </div>
