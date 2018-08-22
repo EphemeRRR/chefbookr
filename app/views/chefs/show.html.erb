@@ -16,9 +16,9 @@
       </div>
       <div class="chef-menus">
         <ul class="nav nav-tabs">
-          <li role="presentation" id="tab-1" class="chef-menu-tab active">Simple</li>
-          <li role="presentation" id="tab-2" class="chef-menu-tab ">Classic</li>
-          <li role="presentation" id="tab-3" class="chef-menu-tab ">Grand Luxe</li>
+          <li role="presentation" id="tab-1" class="chef-menu-tab active"><strong>Simple</strong></li>
+          <li role="presentation" id="tab-2" class="chef-menu-tab "><strong>Classic</strong></li>
+          <li role="presentation" id="tab-3" class="chef-menu-tab "><strong>Grand Luxe</strong></li>
         </ul>
         <div id="tab-body-1" class="chef-menu-tab-body show">
           <div class="chef-menu-body">
@@ -56,55 +56,67 @@
       </div>
       <div class="chef-reviews">
         <div class="chef-reviews-header">
-          <h3>Reviews</h3><div class="h4 chef-reviews-rating">Something</div>
+          <h3>Reviews</h3><div class="chef-reviews-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
         </div>
         <ul class="inbox">
-        <li class="message">
-          <!-- Code your message here -->
-          <img src="images/cecile.png" alt="cecile picture" class="avatar-circle message-img">
-          <div class="message-profile">
-            <h3>Cecile Falafel</h3>
+        <li class="review">
+          <!-- Code your review here -->
+          <%= cl_image_tag @chef.photo_id, class: 'avatar-circle review-img' %>
+          <div class="review-profile">
+            <h5><strong>Cecile Falafel</strong></h5>
             <p>02/08/2018</p>
           </div>
-          <div class="message-content">
-            <h3>I am not sure yet!</h3>
-            <p>I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?</p>
+          <div class="review-content">
+            <h5><strong>Amazing Experience.</strong></h5>
+            <p>Loved the McChicken, so good and so helthy!</p>
           </div>
-          <div class="message-status">
-            <h3 class="status-accepted">Accepted</h3>
-            <p>$352</p>
+          <div class="review-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
           </div>
         </li>
-        <li class="message">
-          <!-- Code your message here -->
-          <img src="images/gab.png" alt="gab picture" class="avatar-circle message-img">
-          <div class="message-profile">
-            <h3>Gab Guy</h3>
+        <li class="review">
+          <!-- Code your review here -->
+          <%= cl_image_tag @chef.photo_id, class: 'avatar-circle review-img' %>
+          <div class="review-profile">
+            <h5><strong>Gab Guy</strong></h5>
             <p>01/08/2018</p>
           </div>
-          <div class="message-content">
-            <h3>I’ll be glad to welcome you in my cosy flat</h3>
-            <p>I’ll be glad to welcome you in my cosy flat in Lille. When are you arriving exactly?</p>
+          <div class="review-content">
+            <h5><strong>5 Stars!</strong></h5>
+            <p>No words for how good this chef is...</p>
           </div>
-          <div class="message-status">
-            <h3 class="status-accepted">Accepted</h3>
-            <p>$152</p>
+          <div class="review-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
           </div>
         </li>
-        <li class="message">
-          <!-- Code your message here -->
-          <img src="images/jad.png" alt="jad picture" class="avatar-circle message-img">
-          <div class="message-profile">
-            <h3>Jab Grenouille</h3>
+        <li class="review">
+          <!-- Code your review here -->
+          <%= cl_image_tag @chef.photo_id, class: 'avatar-circle review-img' %>
+          <div class="review-profile">
+            <h5><strong>Jab Grenouille</strong></h5>
             <p>02/08/2018</p>
           </div>
-          <div class="message-content">
-            <h3>Hey man! I'm sorry...</h3>
-            <p>Hey man! I'm sorry... I'll be in Amsterdam at these dates.</p>
+          <div class="review-content">
+            <h5><strong>Super Duper Guy</strong></h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore architecto quod sunt laudantium ipsum, rerum odio magnam! Quae totam, accusamus qui, dolore dolorum ratione ipsa repellendus. Nam provident, nesciunt dignissimos!</p>
           </div>
-          <div class="message-status">
-            <h3 class="status-denied">Denied</h3>
-            <p>$242</p>
+          <div class="review-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
           </div>
         </li>
       </ul>
