@@ -3,6 +3,7 @@
 @import "config/colors";
 @import "config/bootstrap_variables";
 @import "config/utilities";
+@import "config/navbar_margin";
 
 
 // External libraries
@@ -15,3 +16,6 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
+// Model CSS - Chefs, Users, Bookings, etc.
+@import "chefs/index";
