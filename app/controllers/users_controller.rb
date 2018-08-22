@@ -5,18 +5,18 @@ class UsersController < ApplicationController
     # set_user
   end
 
-  def create
-    # Is this necessary? There is no new, and the create is done by Devise.
-  end
+  # def create # Devise does this
+  #   # Is this necessary? There is no new, and the create is done by Devise.
+  # end
 
-  def edit
-    # set_user
-  end
+  # def edit # Devise does this
+  #   # set_user
+  # end
 
-  def update
-    @user = User.update(user_params)
-    redirect_to user_path(@user)
-  end
+  # def update # Devise does this
+  #   @user = User.update(user_params)
+  #   redirect_to user_path(@user)
+  # end
 
   def destroy
     @user.destroy
@@ -29,8 +29,8 @@ class UsersController < ApplicationController
   #   @user = User.find(params[:id])
   # end
 
-  def user_params
-    params.require(:user).permit(:first_name. :last_name, :photo_id,
-                                 :location, :telephone)
-  end
+  # def user_params # Devise does this
+  #   params.require(:user).permit(:first_name. :last_name, :photo_id,
+  #                                :location, :telephone)
+  # end
 end
