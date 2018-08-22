@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2018_08_22_092516) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "specialty"
     t.text "bio"
     t.index ["email"], name: "index_chefs_on_email", unique: true
     t.index ["reset_password_token"], name: "index_chefs_on_reset_password_token", unique: true
@@ -68,13 +69,6 @@ ActiveRecord::Schema.define(version: 2018_08_22_092516) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["booking_id"], name: "index_reviews_on_booking_id"
-  end
-
-  create_table "specialties", force: :cascade do |t|
-    t.integer "name"
-    t.string "chef"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

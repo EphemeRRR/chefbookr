@@ -44,6 +44,6 @@ class ChefsController < ApplicationController
 
   # def chef_params # Devise does this
   #   params.require(:chef).permit(:first_name, :last_name, :experience, :location,
-  #                                :photo_id, :telephone)
+  #                                :photo_id, :telephone, :specialty)
   # end
 end

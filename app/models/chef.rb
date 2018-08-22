@@ -1,5 +1,4 @@
 class Chef < ApplicationRecord
-  has_many :specialties
   has_many :menus
   has_many :bookings, through: :menus, dependent: :destroy
 
