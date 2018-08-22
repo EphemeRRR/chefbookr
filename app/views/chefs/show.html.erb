@@ -1,9 +1,9 @@
 <div class="container">
+  <div class="chef-image">
+        <%= cl_image_tag @chef.photo_id.url(:thumnail),class: 'img-round'%>
+  </div>
   <div class="chef-main">
     <div class="chef-info">
-      <div class="chef-image">
-        <%= cl_image_tag @chef.photo_id.url(:thumnail),class: 'img-round'%>
-      </div>
       <div class="chef-name">
         <h1><%= @chef.first_name %> <%= @chef.last_name %></h1>
       </div>
