@@ -1,21 +1,21 @@
 class ChefsController < ApplicationController
-  # before_action :set_chef, only: [:show, :edit, :update, :destroy, :toggle_availability]
+  before_action :set_chef, only: [:show, :toggle_availability, :destroy]
 
   def index
     @chefs = Chef.all
   end
 
-  def create
-    # Is this necessary? There is no new, and the create is done by Devise.
-  end
+  # def create # Devise does this
+  #   # Is this necessary? There is no new, and the create is done by Devise.
+  # end
 
   def show
     # set_chef
   end
 
-  def edit
-    # set_chef
-  end
+  # def edit # Devise does this
+  #   # set_chef
+  # end
 
   def toggle_availability
     if @chef.availability == true
@@ -25,10 +25,10 @@ class ChefsController < ApplicationController
     end
   end
 
-  def update
-    @chef = Chef.update(chef_params)
-    redirect_to chef_path(@chef)
-  end
+  # def update # Devise does this
+  #   @chef = Chef.update(chef_params)
+  #   redirect_to chef_path(@chef)
+  # end
 
   def destroy
     # set_chef
@@ -38,12 +38,12 @@ class ChefsController < ApplicationController
 
   private
 
-  # def set_chef
-  #   @chef = Chef.find(params[:id])
-  # end
-
-  def chef_params
-    params.require(:chef).permit(:first_name, :last_name, :experience, :location,
-                                 :photo_id, :telephone)
+  def set_chef
+    @chef = Chef.find(params[:id])
   end
+
+  # def chef_params # Devise does this
+  #   params.require(:chef).permit(:first_name, :last_name, :experience, :location,
+  #                                :photo_id, :telephone, :specialty)
+  # end
 end

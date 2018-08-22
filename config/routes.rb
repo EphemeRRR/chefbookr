@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
-  resources :users, except: [:index, :new, :create]
+  resources :users, only: [:show, :destroy]
   devise_for :chefs, controllers: { registrations: 'chefs/registrations' }
-  resources :chefs, except: [:new, :create] do
+  resources :chefs, only: [:index, :show, :destroy] do
     resources :menus, only: [:create, :update, :destroy]
   end
   resources :bookings do
