@@ -6,8 +6,10 @@
     <div class="chef-info">
       <div class="chef-name">
         <h1><%= @chef.first_name %> <%= @chef.last_name %></h1>
+        <h4><%= @chef.location %></h4>
       </div>
       <div class="chef-show-specialties">
+      <h4><%= @chef.experience %> Years of Experience</h4>
       <h4><span class="label label-primary">French Cuisine</span></h4>
       </div>
       <div class="chef-bio">
@@ -66,7 +68,7 @@
         <ul class="inbox">
         <li class="review">
           <!-- Code your review here -->
-          <%= cl_image_tag @chef.photo_id, class: 'avatar-circle review-img' %>
+          <%= cl_image_tag @chef.photo_id.url(:thumnail), class: 'avatar-circle review-img' %>
           <div class="review-profile">
             <h5><strong>Cecile Falafel</strong></h5>
             <p>02/08/2018</p>
@@ -84,7 +86,7 @@
         </li>
         <li class="review">
           <!-- Code your review here -->
-          <%= cl_image_tag @chef.photo_id, class: 'avatar-circle review-img' %>
+          <%= cl_image_tag @chef.photo_id.url(:thumnail), class: 'avatar-circle review-img' %>
           <div class="review-profile">
             <h5><strong>Gab Guy</strong></h5>
             <p>01/08/2018</p>
@@ -103,7 +105,7 @@
         </li>
         <li class="review">
           <!-- Code your review here -->
-          <%= cl_image_tag @chef.photo_id, class: 'avatar-circle review-img' %>
+          <%= cl_image_tag @chef.photo_id.url(:thumnail), class: 'avatar-circle review-img' %>
           <div class="review-profile">
             <h5><strong>Jab Grenouille</strong></h5>
             <p>02/08/2018</p>
