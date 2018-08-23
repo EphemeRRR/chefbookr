@@ -18,57 +18,25 @@
   <h2 class="text-center">Our Top Chefs</h2>
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-6 col-lg-4">
-        <div class="cocktail-card">
-          <%= link_to "", :id => 'exampleModalLong', "data-toggle" => "modal", 'data-target' => '#exampleModalLong' do %>
-         <div class="card-background">
-            <p class="card-heading">Christian Rognstad</p>
-            <p class="label-specialty">
-            <span class="label label-default">French</span>
-            <span class="label label-danger">Meat</span>
-            <span class="label label-primary">Seafood</span> </p>
-         </div>
-         <% end %>
-          <div class="card-bottom">
-            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/cricri87">
-            <p class="chef-rating">*** <i class="fas fa-thumbs-up"></i></p>
+      <% @chefs.each do |chef| %>
+        <div class="col-xs-12 col-sm-6 col-lg-4">
+            <div class="cocktail-card">
+              <%= link_to "", :id => 'exampleModalLong', "data-toggle" => "modal", 'data-target' => '#exampleModalLong' do %>
+
+             <div class="card-background">
+                <p class="card-heading"><%= chef.first_name %> <%= chef.last_name %></p>
+                <p class="label-specialty">
+                <span class="label label-primary">Seafood</span> </p>
+             </div>
+             <% end %>
+              <div class="card-bottom">
+                <%= cl_image_tag chef.photo_id.url(:bright_face), class: 'card-user' %>
+                <%= link_to 'Info chef', chef_path(chef.id), class: 'btn btn-success' %>
+                <!-- <p class="chef-rating">*** <i class="fas fa-thumbs-up"></i></p> -->
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-lg-4">
-        <div class="cocktail-card">
-          <%= link_to "", :id => 'exampleModalLong', "data-toggle" => "modal", 'data-target' => '#exampleModalLong' do %>
-         <div class="card-background">
-            <p class="card-heading">Christian Rognstad</p>
-            <p class="label-specialty">
-            <span class="label label-default">French</span>
-            <span class="label label-danger">Meat</span>
-            <span class="label label-primary">Seafood</span> </p>
-         </div>
-         <% end %>
-          <div class="card-bottom">
-            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/cricri87">
-            <p class="chef-rating">*** <i class="fas fa-thumbs-up"></i></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-lg-4">
-        <div class="cocktail-card">
-          <%= link_to "", :id => 'exampleModalLong', "data-toggle" => "modal", 'data-target' => '#exampleModalLong' do %>
-         <div class="card-background">
-            <p class="card-heading">Christian Rognstad</p>
-            <p class="label-specialty">
-            <span class="label label-default">French</span>
-            <span class="label label-success">Traditionel</span>
-            <span class="label label-primary">Seafood</span> </p>
-         </div>
-         <% end %>
-          <div class="card-bottom">
-            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/cricri87">
-            <p class="chef-rating">*** <i class="fas fa-thumbs-up"></i></p>
-          </div>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
