@@ -4,10 +4,21 @@
     <h1>ChefBookr</h1>
     <p>Get the best Gastronomic experience with us</p>
     <!-- <a class="btn btn-primary btn-lg">Start now</a> -->
-    <form class="form-inline">
+    <%= form_tag chefs_path, class: "form-inline", method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control form-style",
+        placeholder: "Find a chef"
+      %><%= submit_tag "Search",
+        class: "btn btn-primary search-btn"
+      %>
+    <% end %>
+
+<!--     <form class="form-inline">
       <input class="form-control form-style" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-primary search-btn" type="submit">Search</button>
     </form>
+ -->
   </div>
 </div>
 

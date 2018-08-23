@@ -2,7 +2,18 @@ class ChefsController < ApplicationController
   before_action :set_chef, only: [:show, :toggle_availability, :destroy]
 
   def index
-    @chefs = Chef.all
+    if params[:query].present?
+      sql_query = " \
+        chefs.first_name @@ :query \
+        OR chefs.last_name @@ :query \
+        OR chefs.specialty @@ :query \
+        OR chefs.location @@ :query \
+        OR menus.description @@ :query \
+      "
+      @chefs = Chef.joins(:menus).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @chefs = Chef.all
+    end
   end
 
   # def create # Devise does this
