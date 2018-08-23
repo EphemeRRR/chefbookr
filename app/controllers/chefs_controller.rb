@@ -11,6 +11,7 @@ class ChefsController < ApplicationController
 
   def show
     # set_chef
+    @date = Date.today
   end
 
   # def edit # Devise does this

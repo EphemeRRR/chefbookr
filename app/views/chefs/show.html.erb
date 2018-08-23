@@ -127,9 +127,15 @@
     <div class="chef-booking-form">
       <form class="form-horizontal form-booking">
         <div class="form-group">
-          <label for="date" class="col-sm-2 control-label">Date</label>
+          <label for="begin-date" class="col-sm-2 control-label">Begin</label>
           <div class="col-sm-10">
-          <input type="date" class="form-control" id="date" placeholder="01/01/2018">
+          <input type="date" class="form-control" id="begin-date" placeholder="<%= @date.to_s %>">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="end-date" class="col-sm-2 control-label">End</label>
+          <div class="col-sm-10">
+          <input type="date" class="form-control" id="end-date" placeholder="<%= (@date+3).to_s %>">
           </div>
         </div>
         <div class="form-group">
