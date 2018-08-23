@@ -66,61 +66,28 @@
           </div>
         </div>
         <ul class="inbox">
-        <li class="review">
-          <!-- Code your review here -->
-          <%= cl_image_tag @chef.photo_id.url(:thumnail), class: 'avatar-circle review-img' %>
-          <div class="review-profile">
-            <h5><strong>Cecile Falafel</strong></h5>
-            <p>02/08/2018</p>
-          </div>
-          <div class="review-content">
-            <h5><strong>Amazing Experience.</strong></h5>
-            <p>Loved the McChicken, so good and so helthy!</p>
-          </div>
-          <div class="review-rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-        </li>
-        <li class="review">
-          <!-- Code your review here -->
-          <%= cl_image_tag @chef.photo_id.url(:thumnail), class: 'avatar-circle review-img' %>
-          <div class="review-profile">
-            <h5><strong>Gab Guy</strong></h5>
-            <p>01/08/2018</p>
-          </div>
-          <div class="review-content">
-            <h5><strong>5 Stars!</strong></h5>
-            <p>No words for how good this chef is...</p>
-          </div>
-          <div class="review-rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-        </li>
-        <li class="review">
-          <!-- Code your review here -->
-          <%= cl_image_tag @chef.photo_id.url(:thumnail), class: 'avatar-circle review-img' %>
-          <div class="review-profile">
-            <h5><strong>Jab Grenouille</strong></h5>
-            <p>02/08/2018</p>
-          </div>
-          <div class="review-content">
-            <h5><strong>Super Duper Guy</strong></h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore architecto quod sunt laudantium ipsum, rerum odio magnam! Quae totam, accusamus qui, dolore dolorum ratione ipsa repellendus. Nam provident, nesciunt dignissimos!</p>
-          </div>
-          <div class="review-rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-        </li>
+
+        <% @chef.bookings.each do |booking| %>
+          <% booking.reviews.each do |review| %>
+            <li class="review">
+              <!-- Code your review here -->
+              <%= cl_image_tag review.booking.user.photo_id, class: 'avatar-circle review-img' %>
+              <div class="review-profile">
+                <h5><strong><%= review.booking.user.first_name %> <%= review.booking.user.last_name %></strong></h5>
+                <p><%= review.created_at %></p>
+              </div>
+              <div class="review-content">
+                <p><%= review.comment %></p>
+              </div>
+              <div class="review-rating">
+                <% review.rating.times do %>
+                  <i class="fas fa-star"></i>
+                <% end %>
+              </div>
+            </li>
+          <% end %>
+        <% end %>
+
       </ul>
       </div>
     </div>
