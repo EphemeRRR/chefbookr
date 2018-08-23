@@ -22,6 +22,9 @@ class ChefsController < ApplicationController
 
   def show
     # set_chef
+    @booking = Booking.new
+    @menus = @chef.menus
+    # @menus = @chef.menus.sort_by { |menu| menu.price }
   end
 
   # def edit # Devise does this

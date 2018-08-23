@@ -1,0 +1,33 @@
+<style>
+  td {
+    padding: 5px;
+  }
+</style>
+
+<h2>All Bookings:</h2>
+<table>
+  <tr>
+    <th>Status</th>
+    <th>Chef</th>
+    <th>User</th>
+    <th>Price</th>
+    <th>Category</th>
+    <th>Count</th>
+    <th>Start</th>
+    <th>End</th>
+    <!-- <th>Comment</th> -->
+  </tr>
+<% @bookings.each do |booking| %>
+  <tr>
+    <td><%= booking.confirm == true ? 'Confirmed' : 'Pending' %></td>
+    <td><%= booking.menu.chef.first_name %> <%= booking.menu.chef.last_name %></td>
+    <td><%= booking.user.first_name %> <%= booking.user.last_name %></td>
+    <td><%= booking.price %></td>
+    <td><%= booking.menu.category %></td>
+    <td><%= booking.menu_count %></td>
+    <td><%= booking.start_date %></td>
+    <td><%= booking.end_date %></td>
+    <!-- <td><%= booking.comment %></td> -->
+  </tr>
+<% end %>
+</table>
