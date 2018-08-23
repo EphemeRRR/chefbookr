@@ -21,6 +21,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+# gem 'owlcarousel2'
 
 
 group :development do
