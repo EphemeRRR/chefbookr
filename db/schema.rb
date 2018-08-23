@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2018_08_23_100117) do
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "confrim"
+    t.boolean "confirm"
     t.index ["menu_id"], name: "index_bookings_on_menu_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -56,10 +56,10 @@ ActiveRecord::Schema.define(version: 2018_08_23_100117) do
     t.integer "courses"
     t.text "description"
     t.bigint "chef_id"
-    t.integer "category"
     t.string "photo_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "category"
     t.index ["chef_id"], name: "index_menus_on_chef_id"
   end
 
