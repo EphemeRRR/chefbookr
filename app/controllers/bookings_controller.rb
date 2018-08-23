@@ -19,6 +19,7 @@ class BookingsController < ApplicationController
 
   def edit
     @booking = Booking.find(params[:id])
+    @menus = @booking.menu.chef.menus
   end
 
   def update
