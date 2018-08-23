@@ -129,22 +129,22 @@
         <div class="form-group">
           <label for="begin-date" class="col-sm-2 control-label">Begin</label>
           <div class="col-sm-10">
-          <input type="date" class="form-control" id="begin-date" placeholder="<%= @date.to_s %>">
+          <input type="date" class="form-control" id="begin-date">
           </div>
         </div>
         <div class="form-group">
           <label for="end-date" class="col-sm-2 control-label">End</label>
           <div class="col-sm-10">
-          <input type="date" class="form-control" id="end-date" placeholder="<%= (@date+3).to_s %>">
+          <input type="date" class="form-control" id="end-date">
           </div>
         </div>
         <div class="form-group">
             <label for="menu" class="col-sm-2 control-label">Menu</label>
             <div class="col-sm-10">
               <select class="form-control" id="menu">
-                <option>Simple</option>
-                <option>Classic</option>
-                <option>Grand Luxe</option>
+              <% @menus.each do |menu| %>
+                <option value="<%= menu.id %>"><%= menu.category %> - <%= menu.price %> &euro;</option>
+              <% end %>
               </select>
             </div>
           </div>

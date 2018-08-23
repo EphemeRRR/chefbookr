@@ -11,7 +11,7 @@ class ChefsController < ApplicationController
 
   def show
     # set_chef
-    @date = Date.today
+    @menus = @chef.menus.sort_by { |menu| menu.price }
   end
 
   # def edit # Devise does this
