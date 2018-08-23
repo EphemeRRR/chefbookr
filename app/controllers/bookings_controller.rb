@@ -1,16 +1,24 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :update, :edit, :destroy]
 
+  def index
+    @bookings = Booking.all
+  end
+
   def show
   end
 
   def create
     # calculate price
-    #
+    @booking = Booking.create(booking_params)
+    @booking.user = current_user
+    @booking.price = @booking.menu.price * @booking.menu_count
+    @booking.save
+    redirect_to edit_booking_path(@booking.id)
   end
 
   def edit
-
+    @booking = Booking.find(params[:id])
   end
 
   def update
@@ -18,6 +26,8 @@ class BookingsController < ApplicationController
     # change confirm status
     @booking.update(booking_params)
     @booking.confirm = true
+    @booking.save
+    redirect_to booking_path(@booking.id)
   end
 
   def destroy
@@ -30,6 +40,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params # Devise does this
-    params.require(:booking).permit(:menu_count, :start_date, :end_date, :comment)
+    params.require(:booking).permit(:menu_count, :start_date, :end_date, :comment, :menu_id)
   end
 end

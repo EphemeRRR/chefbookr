@@ -125,7 +125,25 @@
       </div>
     </div>
     <div class="chef-booking-form">
-      <form class="form-horizontal form-booking">
+      <div class="form-booking">
+        <%= simple_form_for @booking do |f| %>
+          <%= f.input :start_date, as: :date, html5: true, required: true %>
+          <%= f.input :end_date, as: :date, html5: true, required: true %>
+          <%= f.association :menu, collection: @menus, label_method: :category, selected: 1 %>
+          <%= f.input :menu_count, as: :integer, label: 'Size', placeholder: '10', required: true %>
+          <div id="cost" class="form-group">
+              <span><strong>Cost:</strong> 0 &euro;</span>
+          </div>
+          <div class="text-center">
+            <%= f.button :submit, 'Book', class: 'btn btn-lg btn-primary btn-book' %>
+          </div>
+        <% end %>
+      </div>
+
+
+
+
+      <!-- <form class="form-horizontal form-booking">
         <div class="form-group">
           <label for="begin-date" class="col-sm-2 control-label">Begin</label>
           <div class="col-sm-10">
@@ -142,9 +160,7 @@
             <label for="menu" class="col-sm-2 control-label">Menu</label>
             <div class="col-sm-10">
               <select class="form-control" id="menu">
-              <% @menus.each do |menu| %>
-                <option value="<%= menu.id %>"><%= menu.category %> - <%= menu.price %> &euro;</option>
-              <% end %>
+                <option value=""></option>
               </select>
             </div>
           </div>
@@ -153,14 +169,12 @@
           <div class="col-sm-4">
           <input type="number" class="form-control" id="size" placeholder="10">
           </div>
-          <div id="cost" class="col-sm-6">
-            <span><strong>Cost:</strong> 0 &euro;</span>
-          </div>
+
         </div>
         <div class="text-center">
           <button type="submit" action="" class="btn btn-lg btn-book btn-primary">Book</button>
         </div>
-      </form>
+      </form> -->
     </div>
   </div>
 </div>
