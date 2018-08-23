@@ -26,14 +26,17 @@
 
 <h1 class="text-center">All our chef's</h1>
 <div class="wrapper-card">
-  <div class="container">
+  <div class="container container-card">
     <div class="row">
       <% @chefs.each do |chef| %>
         <div class="col-xs-12 col-sm-6 col-lg-4">
             <div class="cocktail-card">
               <%= link_to "", :id => 'exampleModalLong', "data-toggle" => "modal", 'data-target' => '#exampleModalLong' do %>
 
-             <div class="card-background">
+             <div class="card-background ">
+                <% chef.menus.each do |menu| %>
+                  <%= cl_image_tag menu.photo_id, class: 'card-background' %>
+                <% end %>
                 <p class="card-heading"><%= chef.first_name %> <%= chef.last_name %></p>
                 <p class="label-specialty">
                 <span class="label label-primary">Seafood</span> </p>

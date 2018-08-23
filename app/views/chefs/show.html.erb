@@ -23,6 +23,9 @@
           <li role="presentation" id="tab-3" class="chef-menu-tab "><strong>Grand Luxe</strong></li>
         </ul>
         <div id="tab-body-1" class="chef-menu-tab-body show">
+
+          <% @chef.menus.each do |menu| %>
+          <div class="float-img"><%= cl_image_tag menu.photo_id, class: 'card-background' %></div>
           <div class="chef-menu-body">
           <h3>3 Courses</h3>
           <h4>45 &euro; / person</h4>
@@ -33,6 +36,7 @@
         </div>
         <div id="tab-body-2" class="chef-menu-tab-body hidden">
           <div class="chef-menu-body">
+            <%= cl_image_tag menu.photo_id, class: 'card-background' %>
           <h3>5 Courses</h3>
           <h4>120 &euro; / person</h4>
             Fish, Fillet-O-Fish <br>
@@ -44,6 +48,7 @@
         </div>
         <div id="tab-body-3" class="chef-menu-tab-body hidden">
           <div class="chef-menu-body">
+            <%= cl_image_tag menu.photo_id, class: 'card-background' %>
           <h3>7 Courses</h3>
           <h4>230 &euro; / person</h4>
             Breakfast, Big Breakfast <br>
@@ -55,6 +60,7 @@
             Salads, Crispy Chicken Salad Green Salad
           </div>
         </div>
+        <% end %>
       </div>
       <div class="chef-reviews">
         <div class="chef-reviews-header">
