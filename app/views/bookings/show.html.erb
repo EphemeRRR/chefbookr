@@ -1,2 +1,13 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+<div class="container">
+  <h1>Bookings</h1>
+
+      <p><%= @booking.confirm == true ? 'Confirmed' : 'Pending' %></p>
+      <p><%= @booking.menu.chef.first_name %> <%= @booking.menu.chef.last_name %></p>
+      <p><%= @booking.user.first_name %> <%= @booking.user.last_name %></p>
+      <p><%= @booking.price %></p>
+      <p><%= @booking.menu.category %></p>
+      <p><%= @booking.menu_count %></p>
+      <p><%= @booking.start_date %></p>
+      <p><%= @booking.end_date %></p>
+      <p><%= @booking.comment %></p>
+</div>
