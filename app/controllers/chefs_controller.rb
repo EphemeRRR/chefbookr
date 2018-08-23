@@ -7,6 +7,7 @@ class ChefsController < ApplicationController
         chefs.first_name @@ :query \
         OR chefs.last_name @@ :query \
         OR chefs.specialty @@ :query \
+        OR chefs.location @@ :query \
         OR menus.description @@ :query \
       "
       @chefs = Chef.joins(:menus).where(sql_query, query: "%#{params[:query]}%")
