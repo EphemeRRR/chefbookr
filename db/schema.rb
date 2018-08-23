@@ -56,10 +56,10 @@ ActiveRecord::Schema.define(version: 2018_08_23_100117) do
     t.integer "courses"
     t.text "description"
     t.bigint "chef_id"
-    t.integer "category"
     t.string "photo_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "category"
     t.index ["chef_id"], name: "index_menus_on_chef_id"
   end
 
