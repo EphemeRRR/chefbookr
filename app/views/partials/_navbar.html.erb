@@ -20,6 +20,7 @@
           <%= link_to "Login user", new_user_session_path, class: "navbar-wagon-link" %>
           <%= link_to "Login chef", new_chef_session_path, class: "navbar-wagon-link" %>
         <% end %>
+        <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
       </div>
     </div>
   </div>
