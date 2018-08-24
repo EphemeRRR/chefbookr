@@ -1,6 +1,6 @@
-<div class="wrapper-forms">
-  <div class="container">
-    <h1>Booking</h1><p>Created : <%= @booking.created_at.strftime('%A %b %C  %Y') %></p>
+<div class="wrapper-forms text-center">
+
+    <h1>Booking</h1><p>Created : <%= @booking.created_at.strftime('%A %b %d  %Y') %></p>
 
         <p class="confirmed-booking"><%= @booking.confirm == true ? 'Confirmed' : 'Pending' %></p>
         <p><%= @booking.menu.chef.first_name %> <%= @booking.menu.chef.last_name %></p>
@@ -8,9 +8,12 @@
         <p>Price <%= @booking.price %> €</p>
         <p>Menu <%= @booking.menu.category %></p>
         <p><%= @booking.menu_count %> Persons</p>
-        <p>Start : <%= @booking.start_date.strftime('%A %b %C  %Y') %></p>
-        <p>End :<%= @booking.end_date.strftime('%A %b %C  %Y') %></p>
-        <p>Comments :</p>
-        <p><%= @booking.comment %></p>
-  </div>
+        <p>Start : <%= @booking.start_date.strftime('%A %b %d  %Y') %></p>
+        <p>End : <%= @booking.end_date.strftime('%A %b %d  %Y') %></p>
+        <% if @booking.comment == ""  %>
+        <% else %>
+         <p>Comments :</p>
+          <p><%= @booking.comment %></p>
+          <% end %>
+
 </div>
