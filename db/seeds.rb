@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 puts 'Cleaning database...'
 Review.destroy_all
 Booking.destroy_all
@@ -12,73 +5,81 @@ Menu.destroy_all
 User.destroy_all
 Chef.destroy_all
 
+commentaires = ["Excellent, super chef!!! Je recommande.", "Peut mieux faire, ambiance à travailler, les plats sont bons..", "Horrible, ne pas booker, le chef ne sait pas se laver les mains!"]
 
-puts 'Creating users...'
-fm = User.create!(email: "FM@vasavoir.com", first_name: "FM", last_name: "hoho", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/fm.jpg")), phone: "06 30 90 03 93", location: "Marseille", password: "aaaaaa", password_confirmation: "aaaaaa")
-
-jj = User.create!(email: "jjdihno@vasavoir.com", first_name: "Jacky", last_name: "Jason", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/jj.jpeg")), phone: "06 30 92 03 93", location: "Aix-en-Provence", password: "aaaaaa", password_confirmation: "aaaaaa")
-
-cricri = User.create!(email: "cricri@vasavoir.com", first_name: "Cricri", last_name: "Grogn", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/cricri.jpeg")), phone: "06 30 94 03 93", location: "Nice", password: "aaaaaa", password_confirmation: "aaaaaa")
-
-puts 'Creating chefs...'
-al = Chef.create!(first_name: "Al", last_name: "Amer", experience: 3, location: "Mulhouse", availability: true, phone: "06 06 06 03 04", email: "alamer@alarue.com", password: "aaaaaa", password_confirmation: "aaaaaa",  specialty: "Fishes French Vegan", bio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis alias, repellat nisi corporis velit impedit. Quidem explicabo dignissimos fugit fuga quisquam tempore aliquid quis aspernatur iste. Ipsam temporibus sed quia voluptatibus? Nesciunt quasi fugiat dolores minus quos dicta, ducimus aliquid laudantium eos tenetur nihil ex perferendis, culpa. Dicta harum molestias asperiores non, ea, aliquid, veritatis necessitatibus totam consectetur facere porro nemo quam aut suscipit iure modi placeat officiis quos, repudiandae voluptates sunt hic perspiciatis autem? Officiis porro voluptatum mollitia, eveniet sit magni. Excepturi vero laudantium accusantium sequi ut magnam asperiores voluptas, molestias similique saepe facere doloremque, ea, cum tenetur enim porro alias harum odio error explicabo iure fugit! Cum excepturi tempore ea consequatur. Laboriosam ex reprehenderit recusandae in incidunt. Magnam dolore, deserunt repudiandae aliquam molestiae cumque dignissimos quisquam culpa. Id aspernatur reprehenderit impedit fugit dolore architecto eos, tempore iste laborum, hic sapiente. Earum praesentium consequatur cupiditate voluptas consequuntur, minima vero iste fuga deleniti in nihil veniam! Impedit consectetur, vel voluptatem vitae provident laboriosam ducimus modi est adipisci in molestiae voluptas obcaecati unde incidunt illum officiis repellendus natus eum inventore sequi perspiciatis, enim error deserunt itaque. Minus nisi mollitia porro laudantium non hic saepe ex suscipit, similique facilis excepturi ipsa voluptate!", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/al_amer.jpg"))
-)
-
-batman = Chef.create!(first_name: "Batman", last_name: "Wain", experience: 5, location: "Gotham City", availability: false, phone: "911", email: "bruce.w@batman.com", password: "aaaaaa", password_confirmation: "aaaaaa", specialty: "Peach Bread Bad_guys", bio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos possimus laboriosam, libero fugiat quaerat fuga, odio mollitia nisi necessitatibus. Fuga similique nobis aliquam reprehenderit reiciendis necessitatibus laboriosam, culpa in rem nisi illum quasi, non, amet explicabo nemo nesciunt accusamus provident commodi ullam animi nulla perspiciatis laborum. Facere, voluptatem maiores quasi eligendi fugiat id necessitatibus provident rerum magnam quisquam. Cum, deleniti, veritatis. Omnis saepe veniam eius, hic molestiae in. Temporibus earum quam possimus adipisci debitis assumenda, sunt, laudantium inventore, fugit porro ea. Nemo excepturi quis rerum expedita laboriosam? Dolor optio, eligendi illo cupiditate praesentium cum beatae cumque, fugit delectus, ipsam aut soluta ratione omnis quos consectetur quibusdam rem nobis sed consequuntur aliquid provident ut voluptatum velit id! Amet, perferendis quod vero, temporibus nam voluptate optio adipisci ut dignissimos animi ducimus ad placeat tenetur non alias, impedit veritatis omnis fuga ex repellendus. Libero atque porro minus corrupti animi veritatis mollitia dolorem non autem harum dolor maxime eos sapiente consequatur iusto praesentium, quam ipsum quo vitae excepturi! Iure ipsum nihil dicta repellendus eum ullam sit quia dignissimos velit magnam consequuntur nostrum beatae, aperiam non iste dolores animi error cupiditate a quis fugit ad molestias odit reiciendis minus. Quia placeat ex ab alias facilis!", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/batman_wain.jpg"))
-)
-
-cricr = Chef.create!(first_name: "Cricri", last_name: "Grogne", experience: 5, location: "Nice City", availability: true, phone: "Cricri's num", email: "cricri@grogn.com", password: "aaaaaa", password_confirmation: "aaaaaa", specialty: "Cocktails Traditionnal French", bio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, quasi. Quis, itaque architecto. Vero quam tempore eveniet. Aperiam quisquam harum, eaque natus a dolore deleniti dignissimos sequi doloribus nostrum impedit tempore dolores modi inventore, qui corrupti dolorem cum, ut. A pariatur, veritatis sequi reiciendis, natus ullam saepe atque quia iusto distinctio! Unde aspernatur excepturi aliquam possimus iure ex eius ad quasi, officia ipsa laborum commodi repudiandae quos, quisquam, eaque deserunt. Distinctio, porro eveniet, aperiam nihil sit unde qui accusantium assumenda in mollitia quas reprehenderit recusandae veritatis quidem. Eos eaque laudantium, dolorum quas laborum quis earum beatae est reiciendis, sunt quod veniam repellendus fugit nulla sint quo adipisci! Quia sunt accusamus optio corporis molestias sint debitis in, id rerum cum. Laudantium, voluptatum repellat. Eveniet eius velit eum laboriosam, ex commodi sunt fugiat excepturi dolor? Iste tenetur rem eius temporibus veniam pariatur quas voluptates, unde vel expedita vero officiis ex rerum dolores voluptatibus molestiae similique officia delectus. Mollitia nobis voluptas quia esse iste at odio repellat libero voluptatem quas est magnam ea qui delectus voluptates et doloribus, similique fugiat officiis, cupiditate quam neque, incidunt ullam facere. Dignissimos consequuntur vel, animi odio aliquid dolore, reiciendis minus nisi delectus, dolorum pariatur voluptate ea quam.", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/cricri.jpeg"))
-)
-
-marcel = Chef.create!(first_name: "Marcel", last_name: "Gragnagni", experience: 8, location: "Avignon", availability: true, phone: "Marcel's num", email: "marc.gragna@gmailing.com", password: "aaaaaa", password_confirmation: "aaaaaa", specialty: "Asian Thai Japanese", bio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, quasi. Quis, itaque architecto. Vero quam tempore eveniet. Aperiam quisquam harum, eaque natus a dolore deleniti dignissimos sequi doloribus nostrum impedit tempore dolores modi inventore, qui corrupti dolorem cum, ut. A pariatur, veritatis sequi reiciendis, natus ullam saepe atque quia iusto distinctio! Unde aspernatur excepturi aliquam possimus iure ex eius ad quasi, officia ipsa laborum commodi repudiandae quos, quisquam, eaque deserunt. Distinctio, porro eveniet, aperiam nihil sit unde qui accusantium assumenda in mollitia quas reprehenderit recusandae veritatis quidem. Eos eaque laudantium, dolorum quas laborum quis earum beatae est reiciendis, sunt quod veniam repellendus fugit nulla sint quo adipisci! Quia sunt accusamus optio corporis molestias sint debitis in, id rerum cum. Laudantium, voluptatum repellat. Eveniet eius velit eum laboriosam, ex commodi sunt fugiat excepturi dolor? Iste tenetur rem eius temporibus veniam pariatur quas voluptates, unde vel expedita vero officiis ex rerum dolores voluptatibus molestiae similique officia delectus. Mollitia nobis voluptas quia esse iste at odio repellat libero voluptatem quas est magnam ea qui delectus voluptates et doloribus, similique fugiat officiis, cupiditate quam neque, incidunt ullam facere. Dignissimos consequuntur vel, animi odio aliquid dolore, reiciendis minus nisi delectus, dolorum pariatur voluptate ea quam.", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/marcel.jpg"))
-)
-
-sophie = Chef.create!(first_name: "Sophie", last_name: "Jibee", experience: 2, location: "Paris", availability: true, phone: "Sophie's num", email: "sophie.jibee@mail.com", password: "aaaaaa", password_confirmation: "aaaaaa", specialty: "Italian Traditionnal", bio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, quasi. Quis, itaque architecto. Vero quam tempore eveniet. Aperiam quisquam harum, eaque natus a dolore deleniti dignissimos sequi doloribus nostrum impedit tempore dolores modi inventore, qui corrupti dolorem cum, ut. A pariatur, veritatis sequi reiciendis, natus ullam saepe atque quia iusto distinctio! Unde aspernatur excepturi aliquam possimus iure ex eius ad quasi, officia ipsa laborum commodi repudiandae quos, quisquam, eaque deserunt. Distinctio, porro eveniet, aperiam nihil sit unde qui accusantium assumenda in mollitia quas reprehenderit recusandae veritatis quidem. Eos eaque laudantium, dolorum quas laborum quis earum beatae est reiciendis, sunt quod veniam repellendus fugit nulla sint quo adipisci! Quia sunt accusamus optio corporis molestias sint debitis in, id rerum cum. Laudantium, voluptatum repellat. Eveniet eius velit eum laboriosam, ex commodi sunt fugiat excepturi dolor? Iste tenetur rem eius temporibus veniam pariatur quas voluptates, unde vel expedita vero officiis ex rerum dolores voluptatibus molestiae similique officia delectus. Mollitia nobis voluptas quia esse iste at odio repellat libero voluptatem quas est magnam ea qui delectus voluptates et doloribus, similique fugiat officiis, cupiditate quam neque, incidunt ullam facere. Dignissimos consequuntur vel, animi odio aliquid dolore, reiciendis minus nisi delectus, dolorum pariatur voluptate ea quam.", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/sophie.jpg"))
-)
-
-puts 'Creating menus...'
-menu_batman1 = Menu.create!(price: 24, courses: 2, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, sapiente cupiditate eligendi dignissimos, nulla repudiandae neque! Harum a vitae ullam reprehenderit maiores perspiciatis. Explicabo, nostrum corporis officia, autem sed eaque, expedita mollitia numquam velit ipsam, culpa tempore! Dolorum ut, tempora reprehenderit voluptatem laudantium accusamus aliquam aperiam sequi odit exercitationem vitae accusantium, perspiciatis harum, iusto iste! Temporibus dignissimos reiciendis cumque? Inventore fuga ab quis nulla enim aliquam illum, ratione debitis. Quia repellendus, laudantium deserunt autem est iste reiciendis. Ipsa debitis cumque optio temporibus nam atque molestiae possimus neque, tempore delectus aliquam dolore nulla similique. Cumque possimus adipisci, aspernatur doloremque optio, itaque.", chef: batman, category: "Simple", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/batman_menu1.jpg"))
-)
-
-menu_batman2 = Menu.create!(price: 48, courses: 3, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, sapiente cupiditate eligendi dignissimos, nulla repudiandae neque! Harum a vitae ullam reprehenderit maiores perspiciatis. Explicabo, nostrum corporis officia, autem sed eaque, expedita mollitia numquam velit ipsam, culpa tempore! Dolorum ut, tempora reprehenderit voluptatem laudantium accusamus aliquam aperiam sequi odit exercitationem vitae accusantium, perspiciatis harum, iusto iste! Temporibus dignissimos reiciendis cumque? Inventore fuga ab quis nulla enim aliquam illum, ratione debitis. Quia repellendus, laudantium deserunt autem est iste reiciendis. Ipsa debitis cumque optio temporibus nam atque molestiae possimus neque, tempore delectus aliquam dolore nulla similique. Cumque possimus adipisci, aspernatur doloremque optio, itaque.", chef: batman, category: "Classic", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/batman_menu2.jpg"))
-)
-
-menu_batman3 = Menu.create!(price: 68, courses: 5, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, sapiente cupiditate eligendi dignissimos, nulla repudiandae neque! Harum a vitae ullam reprehenderit maiores perspiciatis. Explicabo, nostrum corporis officia, autem sed eaque, expedita mollitia numquam velit ipsam, culpa tempore! Dolorum ut, tempora reprehenderit voluptatem laudantium accusamus aliquam aperiam sequi odit exercitationem vitae accusantium, perspiciatis harum, iusto iste! Temporibus dignissimos reiciendis cumque? Inventore fuga ab quis nulla enim aliquam illum, ratione debitis. Quia repellendus, laudantium deserunt autem est iste reiciendis. Ipsa debitis cumque optio temporibus nam atque molestiae possimus neque, tempore delectus aliquam dolore nulla similique. Cumque possimus adipisci, aspernatur doloremque optio, itaque.", chef: batman, category: "Gourmet", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/batman_menu3.jpg"))
-)
-
-menu_al1 = Menu.create!(price: 32, courses: 3, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nam facere ducimus reprehenderit ullam iusto laudantium vero autem repellendus! Illum neque quae minima, perspiciatis soluta qui obcaecati sed! Provident aperiam voluptatem quod. Laboriosam, deserunt, odit. Commodi quam nesciunt quae eaque quibusdam eveniet, vitae placeat autem totam in nisi molestiae modi alias possimus. Quos vitae maxime amet deleniti corporis exercitationem porro, in facere eligendi blanditiis sint ratione optio, non magnam dolores earum ex pariatur numquam. Debitis amet cumque ipsum quidem tempore, inventore sequi, fugit porro atque blanditiis optio placeat, laborum, reiciendis dolorem! Doloribus dolor cum molestiae perspiciatis soluta amet aspernatur, pariatur?", chef: al, category: "Simple", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/al_menu1.jpg"))
-)
-
-menu_al2 = Menu.create!(price: 45, courses: 4, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nam facere ducimus reprehenderit ullam iusto laudantium vero autem repellendus! Illum neque quae minima, perspiciatis soluta qui obcaecati sed! Provident aperiam voluptatem quod. Laboriosam, deserunt, odit. Commodi quam nesciunt quae eaque quibusdam eveniet, vitae placeat autem totam in nisi molestiae modi alias possimus. Quos vitae maxime amet deleniti corporis exercitationem porro, in facere eligendi blanditiis sint ratione optio, non magnam dolores earum ex pariatur numquam. Debitis amet cumque ipsum quidem tempore, inventore sequi, fugit porro atque blanditiis optio placeat, laborum, reiciendis dolorem! Doloribus dolor cum molestiae perspiciatis soluta amet aspernatur, pariatur?", chef: al, category: "Classic", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/al_menu2.jpg"))
-)
-
-menu_al3 = Menu.create!(price: 70, courses: 5, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nam facere ducimus reprehenderit ullam iusto laudantium vero autem repellendus! Illum neque quae minima, perspiciatis soluta qui obcaecati sed! Provident aperiam voluptatem quod. Laboriosam, deserunt, odit. Commodi quam nesciunt quae eaque quibusdam eveniet, vitae placeat autem totam in nisi molestiae modi alias possimus. Quos vitae maxime amet deleniti corporis exercitationem porro, in facere eligendi blanditiis sint ratione optio, non magnam dolores earum ex pariatur numquam. Debitis amet cumque ipsum quidem tempore, inventore sequi, fugit porro atque blanditiis optio placeat, laborum, reiciendis dolorem! Doloribus dolor cum molestiae perspiciatis soluta amet aspernatur, pariatur?", chef: al, category: "Gourmet", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/al_menu3.jpg"))
-)
-
-menu_cricri1 = Menu.create!(price: 52, courses: 3, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, expedita ea laboriosam quam quaerat soluta in sequi hic possimus deleniti ad rerum voluptas quas autem voluptatibus ut qui velit voluptatum quasi, perspiciatis vitae, laborum totam quidem! Asperiores quasi repellat sed itaque et laboriosam cupiditate assumenda magnam ipsam deserunt temporibus laborum pariatur nam atque repellendus, ut nulla, eum aliquam possimus architecto. Sapiente ipsa, tempora quis. Consequatur voluptatibus harum pariatur ab unde dignissimos, odit, amet repellendus veniam expedita beatae quam, asperiores praesentium! Rem iure, voluptates, eos nulla, tempora qui nostrum non laudantium minus distinctio adipisci obcaecati unde illum modi pariatur corporis cumque.", chef: cricr, category: "Simple", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/cricri_menu1.jpg"))
-)
-
-menu_cricri2 = Menu.create!(price: 78, courses: 5, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, expedita ea laboriosam quam quaerat soluta in sequi hic possimus deleniti ad rerum voluptas quas autem voluptatibus ut qui velit voluptatum quasi, perspiciatis vitae, laborum totam quidem! Asperiores quasi repellat sed itaque et laboriosam cupiditate assumenda magnam ipsam deserunt temporibus laborum pariatur nam atque repellendus, ut nulla, eum aliquam possimus architecto. Sapiente ipsa, tempora quis. Consequatur voluptatibus harum pariatur ab unde dignissimos, odit, amet repellendus veniam expedita beatae quam, asperiores praesentium! Rem iure, voluptates, eos nulla, tempora qui nostrum non laudantium minus distinctio adipisci obcaecati unde illum modi pariatur corporis cumque.", chef: cricr, category: "Classic", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/cricri_menu2.jpeg"))
-)
-
-menu_cricri3 = Menu.create!(price: 120, courses: 7, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, expedita ea laboriosam quam quaerat soluta in sequi hic possimus deleniti ad rerum voluptas quas autem voluptatibus ut qui velit voluptatum quasi, perspiciatis vitae, laborum totam quidem! Asperiores quasi repellat sed itaque et laboriosam cupiditate assumenda magnam ipsam deserunt temporibus laborum pariatur nam atque repellendus, ut nulla, eum aliquam possimus architecto. Sapiente ipsa, tempora quis. Consequatur voluptatibus harum pariatur ab unde dignissimos, odit, amet repellendus veniam expedita beatae quam, asperiores praesentium! Rem iure, voluptates, eos nulla, tempora qui nostrum non laudantium minus distinctio adipisci obcaecati unde illum modi pariatur corporis cumque.", chef: cricr, category: "Gourmet", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/cricri_menu3.jpg"))
-)
-
-puts 'Creating bookings...'
-bookin1 = Booking.new(user: User.last, price: 145, start_date: "2018-06-20", end_date: "2018-06-24", menu: menu_al1, comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, voluptatibus nisi est perferendis. Ipsam dolore repellendus voluptatum delectus assumenda dignissimos, rem. Error optio, enim voluptatibus officia impedit placeat a fugit cum explicabo architecto. Corrupti, eligendi. Eum voluptate, consequuntur aliquam error dicta esse consequatur excepturi culpa inventore officiis ullam enim animi, sit atque perspiciatis quis molestiae incidunt alias numquam illum. Quam laborum sapiente quod, molestiae totam nulla. Consequuntur, velit consequatur! Deserunt laborum blanditiis perspiciatis recusandae quas consequuntur eaque provident ipsum ducimus soluta quos inventore at similique repellendus autem, unde placeat ipsam quae aut cumque excepturi reiciendis iure asperiores. Fugit, dolorem, expedita.")
-
-bookin2 = Booking.new(user: User.last, price: 234, start_date: "2018-08-21", end_date: "2018-08-24", menu: menu_batman3, comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, voluptatibus nisi est perferendis. Ipsam dolore repellendus voluptatum delectus assumenda dignissimos, rem. Error optio, enim voluptatibus officia impedit placeat a fugit cum explicabo architecto. Corrupti, eligendi. Eum voluptate, consequuntur aliquam error dicta esse consequatur excepturi culpa inventore officiis ullam enim animi, sit atque perspiciatis quis molestiae incidunt alias numquam illum. Quam laborum sapiente quod, molestiae totam nulla. Consequuntur, velit consequatur! Deserunt laborum blanditiis perspiciatis recusandae quas consequuntur eaque provident ipsum ducimus soluta quos inventore at similique repellendus autem, unde placeat ipsam quae aut cumque excepturi reiciendis iure asperiores. Fugit, dolorem, expedita.")
-
-bookin3 = Booking.new(user: jj, price: 644, start_date: "2018-08-18", end_date: "2018-08-20", menu: menu_cricri2, comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, voluptatibus nisi est perferendis. Ipsam dolore repellendus voluptatum delectus assumenda dignissimos, rem. Error optio, enim voluptatibus officia impedit placeat a fugit cum explicabo architecto. Corrupti, eligendi. Eum voluptate, consequuntur aliquam error dicta esse consequatur excepturi culpa inventore officiis ullam enim animi, sit atque perspiciatis quis molestiae incidunt alias numquam illum. Quam laborum sapiente quod, molestiae totam nulla. Consequuntur, velit consequatur! Deserunt laborum blanditiis perspiciatis recusandae quas consequuntur eaque provident ipsum ducimus soluta quos inventore at similique repellendus autem, unde placeat ipsam quae aut cumque excepturi reiciendis iure asperiores. Fugit, dolorem, expedita.")
-
-puts 'Creating reviews...'
-review1 = Review.create!(rating: 5, comment: "Ceci est un super commentaire", booking: bookin1)
-
-review2 = Review.create!(rating: 3, comment: "Ceci est un commentaire moyen", booking: bookin2)
-
-review3 = Review.create!(rating: 5, comment: "Ceci est un commentaire extraordinaire", booking: bookin3)
+require 'faker'
 
 
+puts "enter the number of users you want to create: "
+# num_users = gets.chomp.to_i
+num_users = 3
 
+puts "Creating #{num_users} users..."
+puts ""
+num_users.times do
+  first_name = Faker::Name.first_name
+  last_name = Faker::Name.last_name
+  email = Faker::Internet.free_email("#{first_name}.#{last_name}")
+  avatar = Faker::LoremFlickr.image("50x60", ['people'])
+  phone = "0#{Faker::Number.leading_zero_number(9)}"
+  location = "Faker::Nation.capital_city"
 
+  new_user = User.create!(email: email, first_name: first_name, last_name: avatar, photo_id: avatar, phone: phone, location: location, password: "aaaaaa", password_confirmation: "aaaaaa")
+end
+
+# puts "enter the number of chefs you want to create: "
+# num_chefs = gets.chomp.to_i
+num_chefs = 40
+count = 0
+puts "Creating #{num_chefs} chefs..."
+puts ""
+num_chefs.times do
+
+  count += 1
+
+  first_name = Faker::Name.first_name
+  last_name = Faker::Name.last_name
+  email = Faker::Internet.free_email("#{first_name}.#{last_name}")
+  avatar = Faker::LoremFlickr.image("50x60", ['people'])
+  phone = "0#{Faker::Number.leading_zero_number(9)}"
+  location = %w(Marseille Paris Nice Toulouse Bordeaux Dijon Viennes Orléan Cannes Aix-en-Provence).sample
+  specialty = %w(Sea-Food French Japanese Asian Thai BBQ Italian Traditionnal Burger Molecular Cheese).sample
+  text = ""
+  exp = (1..20).to_a.sample
+
+  chef1 = Chef.create!(first_name: first_name, last_name: last_name, experience: exp, location: location, availability: true, phone: phone, email: email, password: "aaaaaa", password_confirmation: "aaaaaa",  specialty: specialty, photo_id: avatar, bio: text)
+
+puts "Creating bookings and reviews for the same chef n°#{count} ..."
+puts ""
+
+  menu1 = Menu.create!(price: (15..30).to_a.sample, courses: (1..3).to_a.sample, chef: chef1, category: "Simple", description: "Menu basic avec entrée-plat-dessert", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/menu#{(1..9).to_a.sample.to_i}.jpg")))
+  menu2 = Menu.create!(price: (30..60).to_a.sample, courses: (3..5).to_a.sample, chef: chef1, category: "Classic", description: "Menu un peu plus copieux avec de nombreux à cotés", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/menu#{(1..9).to_a.sample.to_i}.jpg")))
+  menu3 = Menu.create!(price: (60..160).to_a.sample, courses: (5..7).to_a.sample, chef: chef1, category: "Gourmet", description: "Super menu, buffet, boisson, \/r\/n LA TOTALE!!!", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/menu#{(1..9).to_a.sample.to_i}.jpg")))
+
+  bookin1 = Booking.new(user: User.find((User.first.id..User.first.id+num_users-1).to_a.sample), menu: menu1, price: menu1.price*(2..30).to_a.sample, start_date: "2018-05-20", end_date: "2018-05-24", comment: commentaires.sample )
+  bookin2 = Booking.new(user: User.find((User.first.id..User.first.id+num_users-1).to_a.sample), menu: menu1, price: menu1.price*(2..30).to_a.sample, start_date: "2018-05-27", end_date: "2018-05-29", comment: commentaires.sample )
+  bookin3 = Booking.new(user: User.find((User.first.id..User.first.id+num_users-1).to_a.sample), menu: menu2, price: menu2.price*(2..30).to_a.sample, start_date: "2018-06-03", end_date: "2018-06-05", comment: commentaires.sample )
+  bookin4 = Booking.new(user: User.find((User.first.id..User.first.id+num_users-1).to_a.sample), menu: menu2, price: menu2.price*(2..30).to_a.sample, start_date: "2018-06-07", end_date: "2018-06-10", comment: commentaires.sample )
+  bookin5 = Booking.new(user: User.find((User.first.id..User.first.id+num_users-1).to_a.sample), menu: menu3, price: menu3.price*(2..30).to_a.sample, start_date: "2018-06-13", end_date: "2018-06-15", comment: commentaires.sample )
+  bookin6 = Booking.new(user: User.find((User.first.id..User.first.id+num_users-1).to_a.sample), menu: menu3, price: menu3.price*(2..30).to_a.sample, start_date: "2018-06-17", end_date: "2018-06-24", comment: commentaires.sample )
+
+  4.times do
+    review1 = Review.create!(rating: (1..5).to_a.sample, comment: commentaires.sample, booking: bookin1)
+  end
+  4.times do
+    review1 = Review.create!(rating: (1..5).to_a.sample, comment: commentaires.sample, booking: bookin2)
+  end
+  4.times do
+    review1 = Review.create!(rating: (1..5).to_a.sample, comment: commentaires.sample, booking: bookin3)
+  end
+  4.times do
+    review1 = Review.create!(rating: (1..5).to_a.sample, comment: commentaires.sample, booking: bookin4)
+  end
+  4.times do
+    review1 = Review.create!(rating: (1..5).to_a.sample, comment: commentaires.sample, booking: bookin5)
+  end
+  4.times do
+    review1 = Review.create!(rating: (1..5).to_a.sample, comment: commentaires.sample, booking: bookin6)
+  end
+end
 
