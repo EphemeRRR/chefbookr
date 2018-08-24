@@ -9,10 +9,21 @@
     <div class="navbar-wagon-item">
       <div class="dropdown">
         <% if current_chef %>
+        <%= link_to "All chef", chefs_path, class: "navbar-wagon-link" %>
+          <%= link_to 'Dashboard', user_path(current_chef), class: "navbar-wagon-link" %>
           <%= cl_image_tag current_chef.photo_id, class: 'avatar dropdown-toggle', :id => 'navbar-wagon-menu', "data-toggle" => 'dropdown', crop: :fill %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Dashboard</a></li>
+            <li><%= link_to 'Edit profile', edit_chef_registration_path %></li>
+            <li><%= link_to "Logout", destroy_chef_session_path, method: :delete %></li>
+          </ul>
+           <% elsif current_user %>
+            <%= link_to 'Dashboard', user_path(current_user), class: "navbar-wagon-link" %>
+
+           <%= link_to "All chef", chefs_path, class: "navbar-wagon-link" %>
+
+        <%= cl_image_tag current_user.photo_id, class: 'avatar dropdown-toggle', :id => 'navbar-wagon-menu', "data-toggle" => 'dropdown', crop: :fill %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
             <li><%= link_to "Logout", destroy_chef_session_path, method: :delete %></li>
           </ul>
         <% else %>
@@ -20,7 +31,6 @@
           <%= link_to "Login user", new_user_session_path, class: "navbar-wagon-link" %>
           <%= link_to "Login chef", new_chef_session_path, class: "navbar-wagon-link" %>
         <% end %>
-        <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
       </div>
     </div>
   </div>
