@@ -1,16 +1,22 @@
-<h1>Bookings#edit</h1>
-<p>Find me in app/views/bookings/edit.html.erb</p>
+<div class="wrapper-forms">
+  <div class="container">
+    <h1>Bookings#edit</h1>
+    <p>Find me in app/views/bookings/edit.html.erb</p>
 
-<%= simple_form_for @booking do |f| %>
-  <%= f.input :start_date, as: :date, html5: true, required: true %>
-  <%= f.input :end_date, as: :date, html5: true, required: true %>
-  <%= f.association :menu, collection: @menus, label_method: :category %>
-  <%= f.input :menu_count, as: :integer, label: 'Size', placeholder: '10', required: true %>
-  <div id="cost" class="form-group">
-      <span><strong>Cost:</strong> <%= @booking.price %> &euro;</span>
+    <%= simple_form_for @booking do |f| %>
+      <div class="form-inputs form-custom input-sm">
+        <%= f.input :start_date, as: :date, html5: true, required: true %>
+        <%= f.input :end_date, as: :date, html5: true, required: true %>
+        <%= f.association :menu, collection: @menus, label_method: :category %>
+        <%= f.input :menu_count, as: :integer, label: 'Size', placeholder: '10', required: true %>
+        <div id="cost" class="form-group">
+            <span><strong>Cost:</strong> <%= @booking.price %> &euro;</span>
+        </div>
+        <%= f.input :comment, label: 'Leave a commentary for the chef.' %>
+        <div class="text-center">
+          <%= f.button :submit, 'Confirm Booking', class: 'btn btn-lg btn-primary' %>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <%= f.input :comment, label: 'Leave a commentary for the chef.' %>
-  <div class="text-center">
-    <%= f.button :submit, 'Confirm Booking', class: 'btn btn-lg btn-primary' %>
-  </div>
-<% end %>
+</div>
