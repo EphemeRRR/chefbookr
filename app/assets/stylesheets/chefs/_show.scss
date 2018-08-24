@@ -33,16 +33,16 @@
 }
 .chef-menu-tab-body {
   text-align: center;
+  padding: 30px;
 }
 .chef-menu-body {
   line-height: 32px;
   padding-left: 10px;
-  height:350px;
+  max-height: 350px;
   overflow: scroll;
 }
-
-.float-img {
-
+.menu-text {
+  // white-space: pre-wrap;
 }
 
 
