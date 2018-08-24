@@ -20,16 +20,16 @@ num_users.times do
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
   email = Faker::Internet.free_email("#{first_name}.#{last_name}")
-  avatar = Faker::LoremFlickr.image("50x60", ['people'])
+  avatar = ['wkvhyblfr4kye3lkjl84', 'j0uqlibnmsk6wnmc6usz', 'fluxgwckivxjzohoyp1s', 'm4cbkmk8rg0yfomn3m0r', 'boy-snow-hoodie', 'smiling-man'].sample
   phone = "0#{Faker::Number.leading_zero_number(9)}"
   location = "Faker::Nation.capital_city"
 
-  new_user = User.create!(email: email, first_name: first_name, last_name: avatar, photo_id: avatar, phone: phone, location: location, password: "aaaaaa", password_confirmation: "aaaaaa")
+  new_user = User.create!(email: email, first_name: first_name, last_name: last_name, photo_id: avatar, phone: phone, location: location, password: "aaaaaa", password_confirmation: "aaaaaa")
 end
 
 # puts "enter the number of chefs you want to create: "
 # num_chefs = gets.chomp.to_i
-num_chefs = 40
+num_chefs = 20
 count = 0
 puts "Creating #{num_chefs} chefs..."
 puts ""
@@ -40,7 +40,7 @@ num_chefs.times do
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
   email = Faker::Internet.free_email("#{first_name}.#{last_name}")
-  avatar = Faker::LoremFlickr.image("50x60", ['people'])
+  avatar = ['364738998c838404e0805385f4735526_400x400', 'female-chef-cooking-horiz_l179zv', 'chef-smiling-picture-id97556859', 'images', 'smiling-woman-chef-holding-dough-hands-35697643', 'pexels-photo-280009', 'pexels-photo-887827'].sample
   phone = "0#{Faker::Number.leading_zero_number(9)}"
   location = %w(Marseille Paris Nice Toulouse Bordeaux Dijon Viennes Orléan Cannes Aix-en-Provence).sample
   specialty = %w(Sea-Food French Japanese Asian Thai BBQ Italian Traditionnal Burger Molecular Cheese).sample
@@ -54,7 +54,7 @@ puts ""
 
   menu1 = Menu.create!(price: (15..30).to_a.sample, courses: (1..3).to_a.sample, chef: chef1, category: "Simple", description: "Menu basic avec entrée-plat-dessert", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/menu#{(1..9).to_a.sample.to_i}.jpg")))
   menu2 = Menu.create!(price: (30..60).to_a.sample, courses: (3..5).to_a.sample, chef: chef1, category: "Classic", description: "Menu un peu plus copieux avec de nombreux à cotés", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/menu#{(1..9).to_a.sample.to_i}.jpg")))
-  menu3 = Menu.create!(price: (60..160).to_a.sample, courses: (5..7).to_a.sample, chef: chef1, category: "Gourmet", description: "Super menu, buffet, boisson, \/r\/n LA TOTALE!!!", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/menu#{(1..9).to_a.sample.to_i}.jpg")))
+  menu3 = Menu.create!(price: (60..160).to_a.sample, courses: (5..7).to_a.sample, chef: chef1, category: "Gourmet", description: "Super menu, buffet, boisson, \r\n LA TOTALE!!!", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/menu#{(1..9).to_a.sample.to_i}.jpg")))
 
   bookin1 = Booking.new(user: User.find((User.first.id..User.first.id+num_users-1).to_a.sample), menu: menu1, price: menu1.price*(2..30).to_a.sample, start_date: "2018-05-20", end_date: "2018-05-24", comment: commentaires.sample )
   bookin2 = Booking.new(user: User.find((User.first.id..User.first.id+num_users-1).to_a.sample), menu: menu1, price: menu1.price*(2..30).to_a.sample, start_date: "2018-05-27", end_date: "2018-05-29", comment: commentaires.sample )
