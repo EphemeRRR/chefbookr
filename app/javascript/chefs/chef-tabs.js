@@ -52,6 +52,8 @@ const chefShowTabs = () => {
   }
 
   console.log('hi');
+  tabOneBody.classList.remove("hidden");
+  tabOneBody.classList.add("show");
   tabOneButton.addEventListener("click", DisplayBodyHideOthersOne);
   tabTwoButton.addEventListener("click", DisplayBodyHideOthersTwo);
   tabThreeButton.addEventListener("click", DisplayBodyHideOthersThree);
