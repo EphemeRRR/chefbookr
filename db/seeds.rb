@@ -52,9 +52,11 @@ num_chefs.times do
 puts "Creating bookings and reviews for the same chef n°#{count} ..."
 puts ""
 
+
   menu1 = Menu.create!(price: (15..30).to_a.sample, courses: (1..3).to_a.sample, chef: chef1, category: "Simple", description: "Menu basic avec entrée-plat-dessert", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/menu#{(1..9).to_a.sample.to_i}.jpg")))
   menu2 = Menu.create!(price: (30..60).to_a.sample, courses: (3..5).to_a.sample, chef: chef1, category: "Classic", description: "Menu un peu plus copieux avec de nombreux à cotés", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/menu#{(1..9).to_a.sample.to_i}.jpg")))
   menu3 = Menu.create!(price: (60..160).to_a.sample, courses: (5..7).to_a.sample, chef: chef1, category: "Gourmet", description: "Super menu, buffet, boisson, \r\n LA TOTALE!!!", photo_id: File.open(File.join(Rails.root, "/app/assets/images/seed/menu#{(1..9).to_a.sample.to_i}.jpg")))
+
 
   bookin1 = Booking.new(user: User.find((User.first.id..User.first.id+num_users-1).to_a.sample), menu: menu1, price: menu1.price*(2..30).to_a.sample, start_date: "2018-05-20", end_date: "2018-05-24", comment: commentaires.sample )
   bookin2 = Booking.new(user: User.find((User.first.id..User.first.id+num_users-1).to_a.sample), menu: menu1, price: menu1.price*(2..30).to_a.sample, start_date: "2018-05-27", end_date: "2018-05-29", comment: commentaires.sample )

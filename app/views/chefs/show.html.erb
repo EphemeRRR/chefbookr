@@ -55,7 +55,7 @@
               <%= cl_image_tag review.booking.user.photo_id, class: 'avatar-circle review-img' %>
               <div class="review-profile">
                 <h5><strong><%= review.booking.user.first_name %> <%= review.booking.user.last_name %></strong></h5>
-                <p><%= review.created_at %></p>
+                <p><%= review.created_at.strftime('%A %b %d  %Y') %></p>
               </div>
               <div class="review-content">
                 <p><%= review.comment %></p>
