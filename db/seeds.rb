@@ -20,13 +20,13 @@ num_users.times do
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
   email = Faker::Internet.free_email("#{first_name}.#{last_name}")
-  avatar = ['jj.jpeg', 'cricri.jpeg', 'fm.jpg', 'chef.jpg', 'man.jpg', 'sophie.jph', 'chefwoman.jpg', 'marcel.jpg'].sample
+  avatar = ['jj.jpeg', 'cricri.jpeg', 'fm.jpg', 'chef.jpg', 'man.jpg', 'sophie.jpg', 'chefwoman.jpg', 'marcel.jpg'].sample
   phone = "0#{Faker::Number.leading_zero_number(9)}"
   location = "Faker::Nation.capital_city"
 
-  new_user = User.new(email: email, first_name: first_name, last_name: last_name, photo_id: avatar, phone: phone, location: location, password: "aaaaaa", password_confirmation: "aaaaaa")
-  new_user.remote_photo_id_url = '/app/assets/images/seed/#{avatar}'
-  new_user.save
+  new_user = User.new(email: email, first_name: first_name, last_name: last_name, phone: phone, location: location, password: "aaaaaa", password_confirmation: "aaaaaa")
+  new_user.remote_photo_id_url = File.join(Rails.root, "/app/assets/images/seed/#{avatar}").to_s
+  new_user.save!
 end
 
 # puts "enter the number of chefs you want to create: "
@@ -42,16 +42,16 @@ num_chefs.times do
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
   email = Faker::Internet.free_email("#{first_name}.#{last_name}")
-  avatar = ['jj.jpeg', 'cricri.jpeg', 'fm.jpg', 'chef.jpg', 'man.jpg', 'sophie.jph', 'chefwoman.jpg', 'marcel.jpg'].sample
+  avatar = ['jj.jpeg', 'cricri.jpeg', 'fm.jpg', 'chef.jpg', 'man.jpg', 'sophie.jpg', 'chefwoman.jpg', 'marcel.jpg'].sample
   phone = "0#{Faker::Number.leading_zero_number(9)}"
   location = %w(Marseille Paris Nice Toulouse Bordeaux Dijon Viennes Orléan Cannes Aix-en-Provence).sample
   specialty = %w(Sea-Food French Japanese Asian Thai BBQ Italian Traditionnal Burger Molecular Cheese).sample
   text = ""
   exp = (1..20).to_a.sample
 
-  chef1 = Chef.new(first_name: first_name, last_name: last_name, experience: exp, location: location, availability: true, phone: phone, email: email, password: "aaaaaa", password_confirmation: "aaaaaa",  specialty: specialty, photo_id: avatar, bio: text)
-  chef1.remote_photo_id_url = '/app/assets/images/seed/#{avatar}'
-  chef1.save
+  chef1 = Chef.new(first_name: first_name, last_name: last_name, experience: exp, location: location, availability: true, phone: phone, email: email, password: "aaaaaa", password_confirmation: "aaaaaa",  specialty: specialty, bio: text)
+  chef1.remote_photo_id_url = File.join(Rails.root, "/app/assets/images/seed/#{avatar}").to_s
+  chef1.save!
 
 puts "Creating bookings and reviews for the same chef n°#{count} ..."
 puts ""
