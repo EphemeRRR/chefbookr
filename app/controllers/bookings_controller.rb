@@ -10,11 +10,15 @@ class BookingsController < ApplicationController
 
   def create
     # calculate price
-    @booking = Booking.create(booking_params)
-    @booking.user = current_user
-    @booking.price = @booking.menu.price * @booking.menu_count
-    @booking.save
-    redirect_to edit_booking_path(@booking.id)
+    if user_signed_in? == false
+      redirect_to new_user_session_path
+    else
+      @booking = Booking.create(booking_params)
+      @booking.user = current_user
+      @booking.price = @booking.menu.price * @booking.menu_count
+      @booking.save
+      redirect_to edit_booking_path(@booking.id)
+    end
   end
 
   def edit
