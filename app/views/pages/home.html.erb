@@ -41,8 +41,9 @@
                 <% end %>
                 <p class="card-heading"><%= chef.first_name %> <%= chef.last_name %></p>
                 <p class="label-specialty">
-                <span class="label label-primary">Seafood</span> </p>
+                <span class="label label-primary"><%= chef.specialty %></span> </p>
              </div>
+             <% raise %>
              <% end %>
               <div class="card-bottom">
                 <%= cl_image_tag chef.photo_id.url(:bright_face), class: 'card-user' %>
