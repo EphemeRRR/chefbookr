@@ -9,7 +9,7 @@
     <div class="navbar-wagon-item">
       <div class="dropdown">
         <% if current_chef %>
-        <%= link_to "All chef", chefs_path, class: "navbar-wagon-link" %>
+        <%= link_to "All Chefs", chefs_path, class: "navbar-wagon-link" %>
           <%= link_to 'Dashboard', user_path(current_chef), class: "navbar-wagon-link" %>
           <%= cl_image_tag current_chef.photo_id, class: 'avatar dropdown-toggle', :id => 'navbar-wagon-menu', "data-toggle" => 'dropdown', crop: :fill %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
