@@ -9,6 +9,7 @@ gem 'rails', '5.2.1'
 gem 'redis'
 gem 'devise'
 
+gem 'faker'
 #gestion des images
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
