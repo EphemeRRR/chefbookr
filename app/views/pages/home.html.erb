@@ -1,4 +1,4 @@
-<%= render 'partials/modal'  %>
+<%= render 'partials/modal' %>
 <div class="banner">
   <div class="banner-content">
     <h1>ChefBookr</h1>
@@ -43,7 +43,6 @@
                 <p class="label-specialty">
                 <span class="label label-primary"><%= chef.specialty %></span> </p>
              </div>
-             <% raise %>
              <% end %>
               <div class="card-bottom">
                 <%= cl_image_tag chef.photo_id.url(:bright_face), class: 'card-user' %>
