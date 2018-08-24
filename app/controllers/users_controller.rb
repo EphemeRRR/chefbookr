@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
-  # before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def show
     # set_user
+    @reviews = @user.bookings.map { |booking| booking.review}
   end
 
   # def create # Devise does this
@@ -25,9 +26,9 @@ class UsersController < ApplicationController
 
   private
 
-  # def set_user
-  #   @user = User.find(params[:id])
-  # end
+  def set_user
+    @user = User.find(params[:id])
+  end
 
   # def user_params # Devise does this
   #   params.require(:user).permit(:first_name. :last_name, :photo_id,

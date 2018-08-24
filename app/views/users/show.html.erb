@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="user-dashboard">
+    <div class="row">
+      <div class="user-name">
+        <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+      </div>
+      <div class="col-sm-6">
+        <div class="user-bookings">
+          <h3>My Bookings</h3>
+          <ul class="user-dashboard-list">
+            <% if @user.bookings.blank? %>
+              <p>You have no bookings yet.</p>
+            <% else %>
+              <% @user.bookings.each do |booking| %>
+                <% booking.reviews.each do |review| %>
+                  <li class="">
+                    <div><%= @booking.confirm == true ? 'Confirmed' : 'Pending' %></div>
+                    <div><%= @booking.menu.chef.first_name %> <%= @booking.menu.chef.last_name %></div>
+                    <div><%= @booking.user.first_name %> <%= @booking.user.last_name %></div>
+                    <div><%= @booking.divrice %></div>
+                    <div><%= @booking.menu.category %></div>
+                    <div><%= @booking.menu_count %></div>
+                    <div><%= @booking.start_date %></div>
+                    <div><%= @booking.end_date %></div>
+                    <div><%= @booking.comment %></div>
+                  </li>
+                <% end %>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="user-reviews">
+          <h3>My Reviews</h3>
+          <ul class="user-dashboard-list">
+          <% if @reviews.blank? %>
+            <p>You have no reviews yet.</p>
+          <% else %>
+            <% @reviews.each do |review| %>
+              <li>
+                <div>
+                  <%= review.booking.menu.chef.first_name %>
+                  <%= review.booking.menu.chef.last_name %>
+                  <%= cl_image_tag review.booking.menu.chef.photo_id, class: 'avatar-circle review-img' %>
+                  <% review.rating.times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                </div>
+              </li>
+            <% end %>
+          <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
