@@ -1,4 +1,4 @@
-<%= render 'partials/modal'  %>
+<%= render 'partials/modal' %>
 <div class="banner">
   <div class="banner-content">
     <h1>ChefBookr</h1>
@@ -41,7 +41,7 @@
                 <% end %>
                 <p class="card-heading"><%= chef.first_name %> <%= chef.last_name %></p>
                 <p class="label-specialty">
-                <span class="label label-primary">Seafood</span> </p>
+                <span class="label label-primary"><%= chef.specialty %></span> </p>
              </div>
              <% end %>
               <div class="card-bottom">

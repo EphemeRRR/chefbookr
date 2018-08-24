@@ -10,7 +10,7 @@
       </div>
       <div class="chef-show-specialties">
       <h4><%= @chef.experience %> Years of Experience</h4>
-      <h4><span class="label label-primary">French Cuisine</span></h4>
+      <h4><span class="label label-primary"><%= @chef.specialty %></span></h4>
       </div>
       <div class="chef-bio">
         <h4>Bio</h4>
@@ -26,11 +26,11 @@
         <div id="tab-body-<%= @counter %>" class="chef-menu-tab-body hidden">
           <div class="float-img"><%= cl_image_tag menu.photo_id, class: 'card-background' %></div>
           <div class="chef-menu-body">
-          <h3>3 Courses</h3>
-          <h4>45 &euro; / person</h4>
-            Breakfast, Big Breakfast, Breakfast Wrap, Chicken McMuffin With Egg,<br>
-            Beef, BBQ Double Burger, Big Mac Big Tasty <br>
-            Chicken, 10pc Chicken McNuggets™ 4pc Chicken McNuggets
+          <h3><%= menu.courses %> Courses</h3>
+          <h4><%= menu.price %> &euro; / person</h4>
+            <div class="menu-text">
+              <%= menu.description %>
+            </div>
           </div>
         </div>
         <% @counter += 1 %>
