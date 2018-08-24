@@ -10,7 +10,9 @@ class ChefsController < ApplicationController
         OR chefs.location @@ :query \
         OR menus.description @@ :query \
       "
-      @chefs = Chef.joins(:menus).where(sql_query, query: "%#{params[:query]}%")
+      @chefs = Chef.joins(:menus)
+        .where(sql_query, query: "%#{params[:query]}%")
+        .group('chefs.id')
     else
       @chefs = Chef.all
     end
