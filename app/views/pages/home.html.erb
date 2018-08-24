@@ -34,8 +34,10 @@
               <%= link_to chef_path(chef.id)  do %>
 
              <div class="card-background">
-               <% chef.menus.each do |menu| %>
-                  <%= cl_image_tag menu.photo_id, class: 'card-background' %>
+                <% if chef.menus.blank? || chef.menus.first.photo_id.blank? %>
+                  <%= image_tag 'food5.jpeg' %>
+                <% else %>
+                  <%= cl_image_tag chef.menus.first.photo_id, class: 'card-background'%>
                 <% end %>
                 <p class="card-heading"><%= chef.first_name %> <%= chef.last_name %></p>
                 <p class="label-specialty">
