@@ -14,7 +14,6 @@
   background-size: cover;
   height: 210px;
   position: relative;
-  transition: all .5s ease-in-out;
 }
 
 .card-background img {
@@ -24,7 +23,7 @@
 .cocktail-card {
   margin: 15px 0px;
   text-align: center;
-  height: 250px;
+  height: 275px;
   color: gray;
   background-color: #fff;
   background-position: center;
@@ -36,7 +35,6 @@
 }
 
 .card-background:hover {
-  margin-top: -5px;
 
 }
 
@@ -53,9 +51,10 @@
 .card-heading {
   position: absolute;
   left: 10px;
-  top: 10px;
+  top: -26px;
   width: auto;
-  color: #fff;
+  color: black;
+  text-align: center;
 }
 
 .label-specialty {
